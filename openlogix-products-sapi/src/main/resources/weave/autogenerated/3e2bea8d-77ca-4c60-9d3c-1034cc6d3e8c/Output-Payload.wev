@@ -1,0 +1,25 @@
+%dw 2.0
+
+type auto_3e2bea8d_77ca_4c60_9d3c_1034cc6d3e8c_Output_Payload = {
+  month9_2022: Number, 
+  month3_2022: Number, 
+  month11_2022: Number, 
+  accountDimensionExternalId: String, 
+  label: String, 
+  month6_2022: Number, 
+  productDimensionCategoryId: String, 
+  month12_2022: Number, 
+  month1_2022: Number, 
+  productDimensionExternalId: String, 
+  measureCode: String, 
+  month8_2022: Number, 
+  promotionDimensionId: String, 
+  month4_2022: Number, 
+  month7_2022: Number, 
+  month10_2022: Number, 
+  month5_2022: Number, 
+  accountDimensionId: String, 
+  month2_2022: Number, 
+  _?: Any
+}
+

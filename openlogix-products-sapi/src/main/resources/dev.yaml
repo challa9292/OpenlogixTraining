@@ -1,0 +1,9 @@
+http:
+  port: "8081"
+  host: "localhost"
+  path: "/api/*"
+db:
+  host: "localhost"
+  port: "3306"
+  User: "root"
+  Password: "Challa9292"

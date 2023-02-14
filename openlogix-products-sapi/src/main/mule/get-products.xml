@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:db="http://www.mulesoft.org/schema/mule/db" xmlns:ee="http://www.mulesoft.org/schema/mule/ee/core"
+	xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/ee/core/current/mule-ee.xsd
+http://www.mulesoft.org/schema/mule/db http://www.mulesoft.org/schema/mule/db/current/mule-db.xsd">
+	<flow name="get-productsFlow" doc:id="11f3a701-9ee2-43e5-97b0-05d44879a1db" >
+		<db:select doc:name="Select" doc:id="8b8b67ab-43c0-4816-b743-821c30f8c4f3" config-ref="Database_Config">
+			<db:sql ><![CDATA[SELECT `products`.`accountDimensionId`,
+    `products`.`productDimensionCategoryId`,
+    `products`.`accountDimensionExternalId`,
+    `products`.`promotionDimensionId`,
+    `products`.`productDimensionExternalId`,
+    `products`.`label`,
+    `products`.`measureCode`,
+    `products`.`month1_2022`,
+    `products`.`month2_2022`,
+    `products`.`month3_2022`,
+    `products`.`month4_2022`,
+    `products`.`month5_2022`,
+    `products`.`month6_2022`,
+    `products`.`month7_2022`,
+    `products`.`month8_2022`,
+    `products`.`month9_2022`,
+    `products`.`month10_2022`,
+    `products`.`month11_2022`,
+    `products`.`month12_2022`
+FROM `openlogix`.`products`;
+]]></db:sql>
+		</db:select>
+		<ee:transform doc:name="Transform Message" doc:id="8e695486-c25b-443c-abe0-106838a3afe7" >
+			<ee:message >
+				<ee:set-payload ><![CDATA[%dw 2.0
+output application/json
+---
+{
+  status: "records sucessfully retrived"
+}]]></ee:set-payload>
+			</ee:message>
+		</ee:transform>
+		<logger level="INFO" doc:name="products retrived" doc:id="e876960e-96a9-4590-beb6-2dc369ea5604" />
+	</flow>
+</mule>
