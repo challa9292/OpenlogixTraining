@@ -1,0 +1,601 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$ref": "#/definitions/default",
+  "definitions": {
+    "defs_comment_id": {
+      "pattern": "^Fc[A-Z0-9]{8,}$",
+      "type": "string"
+    },
+    "objs_file": {
+      "additionalProperties": false,
+      "type": "object",
+      "properties": {
+        "filetype": {"type": "string"},
+        "thumb_360": {
+          "format": "uri",
+          "type": "string"
+        },
+        "thumb_160": {
+          "format": "uri",
+          "type": "string"
+        },
+        "date_delete": {"type": "integer"},
+        "thumb_480": {
+          "format": "uri",
+          "type": "string"
+        },
+        "pinned_info": {"$ref": "#/definitions/defs_pinned_info"},
+        "thumb_800": {
+          "format": "uri",
+          "type": "string"
+        },
+        "thumb_720": {
+          "format": "uri",
+          "type": "string"
+        },
+        "non_owner_editable": {"type": "boolean"},
+        "thumb_960": {
+          "format": "uri",
+          "type": "string"
+        },
+        "thumb_800_w": {"type": "integer"},
+        "mode": {"type": "string"},
+        "external_url": {
+          "format": "uri",
+          "type": "string"
+        },
+        "is_tombstoned": {"type": "boolean"},
+        "num_stars": {"type": "integer"},
+        "image_exif_rotation": {"type": "integer"},
+        "id": {"$ref": "#/definitions/defs_file_id"},
+        "state": {"type": "string"},
+        "thumb_64": {
+          "format": "uri",
+          "type": "string"
+        },
+        "created": {"type": "integer"},
+        "last_editor": {"$ref": "#/definitions/defs_user_id"},
+        "thumb_480_w": {"type": "integer"},
+        "thumb_960_h": {"type": "integer"},
+        "url_private_download": {
+          "format": "uri",
+          "type": "string"
+        },
+        "permalink_public": {
+          "format": "uri",
+          "type": "string"
+        },
+        "has_rich_preview": {"type": "boolean"},
+        "is_starred": {"type": "boolean"},
+        "channels": {
+          "uniqueItems": true,
+          "type": "array",
+          "items": {"$ref": "#/definitions/defs_channel_id"}
+        },
+        "size": {"type": "integer"},
+        "comments_count": {"type": "integer"},
+        "name": {"type": "string"},
+        "permalink": {
+          "format": "uri",
+          "type": "string"
+        },
+        "public_url_shared": {"type": "boolean"},
+        "updated": {"type": "integer"},
+        "original_w": {"type": "integer"},
+        "thumb_480_h": {"type": "integer"},
+        "thumb_720_w": {"type": "integer"},
+        "preview": {"type": "string"},
+        "external_id": {"type": "string"},
+        "thumb_1024_h": {"type": "integer"},
+        "title": {"type": "string"},
+        "original_h": {"type": "integer"},
+        "ims": {
+          "uniqueItems": true,
+          "type": "array",
+          "items": {"$ref": "#/definitions/defs_dm_id"}
+        },
+        "thumb_720_h": {"type": "integer"},
+        "shares": {
+          "additionalProperties": false,
+          "type": "object",
+          "properties": {
+            "private": {
+              "additionalProperties": false,
+              "type": "object"
+            },
+            "public": {
+              "additionalProperties": false,
+              "type": "object"
+            }
+          }
+        },
+        "url_private": {
+          "format": "uri",
+          "type": "string"
+        },
+        "thumb_960_w": {"type": "integer"},
+        "display_as_bot": {"type": "boolean"},
+        "timestamp": {"type": "integer"},
+        "editor": {"$ref": "#/definitions/defs_user_id"},
+        "thumb_80": {
+          "format": "uri",
+          "type": "string"
+        },
+        "editable": {"type": "boolean"},
+        "groups": {
+          "uniqueItems": true,
+          "type": "array",
+          "items": {"$ref": "#/definitions/defs_group_id"}
+        },
+        "is_external": {"type": "boolean"},
+        "thumb_360_h": {"type": "integer"},
+        "pretty_type": {"type": "string"},
+        "external_type": {"type": "string"},
+        "user_team": {"$ref": "#/definitions/defs_team"},
+        "pinned_to": {
+          "type": "array",
+          "items": {"$ref": "#/definitions/defs_channel"}
+        },
+        "thumb_800_h": {"type": "integer"},
+        "source_team": {"$ref": "#/definitions/defs_team"},
+        "is_public": {"type": "boolean"},
+        "thumb_360_w": {"type": "integer"},
+        "thumb_tiny": {"type": "string"},
+        "mimetype": {"type": "string"},
+        "reactions": {
+          "type": "array",
+          "items": {"$ref": "#/definitions/objs_reaction"}
+        },
+        "thumb_1024_w": {"type": "integer"},
+        "thumb_1024": {
+          "format": "uri",
+          "type": "string"
+        },
+        "user": {"type": "string"},
+        "username": {"type": "string"}
+      }
+    },
+    "defs_dm_id": {
+      "pattern": "^[D][A-Z0-9]{8,}$",
+      "type": "string"
+    },
+    "defs_app_id": {
+      "pattern": "^A[A-Z0-9]{1,}$",
+      "type": "string"
+    },
+    "blocks": {
+      "type": "array",
+      "items": {
+        "additionalProperties": true,
+        "type": "object",
+        "required": ["type"],
+        "properties": {"type": {"type": "string"}}
+      }
+    },
+    "defs_channel_id": {
+      "pattern": "^[C][A-Z0-9]{2,}$",
+      "type": "string"
+    },
+    "defs_channel": {
+      "pattern": "^[CGD][A-Z0-9]{8,}$",
+      "type": "string"
+    },
+    "defs_pinned_info": {
+      "additionalProperties": false,
+      "type": "object"
+    },
+    "defs_ok_true": {
+      "type": "boolean",
+      "enum": [true]
+    },
+    "defs_ts": {
+      "pattern": "^\\d{10}\\.\\d{6}$",
+      "type": "string"
+    },
+    "objs_bot_profile": {
+      "additionalProperties": false,
+      "type": "object",
+      "required": [
+        "app_id",
+        "deleted",
+        "icons",
+        "id",
+        "name",
+        "team_id",
+        "updated"
+      ],
+      "properties": {
+        "deleted": {"type": "boolean"},
+        "name": {"type": "string"},
+        "id": {"$ref": "#/definitions/defs_bot_id"},
+        "team_id": {"$ref": "#/definitions/defs_team"},
+        "icons": {
+          "additionalProperties": false,
+          "type": "object",
+          "required": [
+            "image_36",
+            "image_48",
+            "image_72"
+          ],
+          "properties": {
+            "image_36": {
+              "format": "uri",
+              "type": "string"
+            },
+            "image_48": {
+              "format": "uri",
+              "type": "string"
+            },
+            "image_72": {
+              "format": "uri",
+              "type": "string"
+            }
+          }
+        },
+        "app_id": {"$ref": "#/definitions/defs_app_id"},
+        "updated": {"type": "integer"}
+      }
+    },
+    "objs_message": {
+      "additionalProperties": false,
+      "type": "object",
+      "required": [
+        "text",
+        "ts",
+        "type"
+      ],
+      "properties": {
+        "attachments": {
+          "minItems": 1,
+          "uniqueItems": true,
+          "type": "array",
+          "items": {
+            "additionalProperties": false,
+            "type": "object",
+            "required": ["id"],
+            "properties": {
+              "image_height": {"type": "integer"},
+              "image_url": {"type": "string"},
+              "id": {"type": "integer"},
+              "image_width": {"type": "integer"},
+              "fallback": {"type": "string"},
+              "image_bytes": {"type": "integer"}
+            }
+          }
+        },
+        "client_msg_id": {"type": "string"},
+        "purpose": {"type": "string"},
+        "upload": {"type": "boolean"},
+        "is_intro": {"type": "boolean"},
+        "user_profile": {"$ref": "#/definitions/objs_user_profile_short"},
+        "type": {"type": "string"},
+        "is_delayed_message": {"type": "boolean"},
+        "subscribed": {"type": "boolean"},
+        "unread_count": {"type": "integer"},
+        "file": {"$ref": "#/definitions/objs_file"},
+        "subtype": {"type": "string"},
+        "reply_users_count": {"type": "integer"},
+        "inviter": {"$ref": "#/definitions/defs_user_id"},
+        "text": {"type": "string"},
+        "display_as_bot": {"type": "boolean"},
+        "bot_id": {
+          "type": "array",
+          "items": [
+            {
+              "pattern": "^B[A-Z0-9]{8,}$",
+              "type": "string"
+            },
+            {"type": "null"}
+          ]
+        },
+        "latest_reply": {"$ref": "#/definitions/defs_ts"},
+        "last_read": {"$ref": "#/definitions/defs_ts"},
+        "parent_user_id": {"$ref": "#/definitions/defs_user_id"},
+        "blocks": {"$ref": "#/definitions/blocks"},
+        "reply_users": {
+          "minItems": 1,
+          "uniqueItems": true,
+          "type": "array",
+          "items": {"$ref": "#/definitions/defs_user_id"}
+        },
+        "team": {"$ref": "#/definitions/defs_workspace_id"},
+        "icons": {
+          "additionalProperties": false,
+          "type": "object",
+          "properties": {"emoji": {"type": "string"}}
+        },
+        "reply_count": {"type": "integer"},
+        "user_team": {"$ref": "#/definitions/defs_workspace_id"},
+        "pinned_to": {
+          "type": "array",
+          "items": {"$ref": "#/definitions/defs_channel"}
+        },
+        "is_starred": {"type": "boolean"},
+        "replies": {
+          "type": "array",
+          "items": {
+            "additionalProperties": false,
+            "type": "object",
+            "required": [
+              "ts",
+              "user"
+            ],
+            "properties": {
+              "user": {"$ref": "#/definitions/defs_user_id"},
+              "ts": {"$ref": "#/definitions/defs_ts"}
+            }
+          }
+        },
+        "bot_profile": {"$ref": "#/definitions/objs_bot_profile"},
+        "old_name": {"type": "string"},
+        "source_team": {"$ref": "#/definitions/defs_workspace_id"},
+        "thread_ts": {"$ref": "#/definitions/defs_ts"},
+        "name": {"type": "string"},
+        "files": {
+          "minItems": 1,
+          "uniqueItems": true,
+          "type": "array",
+          "items": {"$ref": "#/definitions/objs_file"}
+        },
+        "topic": {"type": "string"},
+        "comment": {"$ref": "#/definitions/objs_comment"},
+        "reactions": {
+          "type": "array",
+          "items": {"$ref": "#/definitions/objs_reaction"}
+        },
+        "permalink": {
+          "format": "uri",
+          "type": "string"
+        },
+        "user": {"$ref": "#/definitions/defs_user_id"},
+        "ts": {"$ref": "#/definitions/defs_ts"},
+        "username": {"type": "string"}
+      }
+    },
+    "default": {
+      "additionalProperties": false,
+      "type": "object",
+      "required": [
+        "items",
+        "ok"
+      ],
+      "properties": {
+        "paging": {"$ref": "#/definitions/objs_paging"},
+        "ok": {"$ref": "#/definitions/defs_ok_true"},
+        "items": {
+          "type": "array",
+          "items": {
+            "type": "array",
+            "items": [
+              {
+                "additionalProperties": false,
+                "type": "object",
+                "required": [
+                  "channel",
+                  "date_create",
+                  "message",
+                  "type"
+                ],
+                "properties": {
+                  "date_create": {"type": "integer"},
+                  "channel": {"$ref": "#/definitions/defs_channel"},
+                  "message": {"$ref": "#/definitions/objs_message"},
+                  "type": {
+                    "type": "string",
+                    "enum": ["message"]
+                  }
+                }
+              },
+              {
+                "additionalProperties": false,
+                "type": "object",
+                "required": [
+                  "date_create",
+                  "file",
+                  "type"
+                ],
+                "properties": {
+                  "file": {"$ref": "#/definitions/objs_file"},
+                  "date_create": {"type": "integer"},
+                  "type": {
+                    "type": "string",
+                    "enum": ["file"]
+                  }
+                }
+              },
+              {
+                "additionalProperties": false,
+                "type": "object",
+                "required": [
+                  "comment",
+                  "date_create",
+                  "file",
+                  "type"
+                ],
+                "properties": {
+                  "file": {"$ref": "#/definitions/objs_file"},
+                  "date_create": {"type": "integer"},
+                  "comment": {"$ref": "#/definitions/objs_comment"},
+                  "type": {
+                    "type": "string",
+                    "enum": ["file_comment"]
+                  }
+                }
+              },
+              {
+                "additionalProperties": false,
+                "type": "object",
+                "required": [
+                  "channel",
+                  "date_create",
+                  "type"
+                ],
+                "properties": {
+                  "date_create": {"type": "integer"},
+                  "channel": {"$ref": "#/definitions/defs_channel"},
+                  "type": {
+                    "type": "string",
+                    "enum": ["channel"]
+                  }
+                }
+              },
+              {
+                "additionalProperties": false,
+                "type": "object",
+                "required": [
+                  "channel",
+                  "date_create",
+                  "type"
+                ],
+                "properties": {
+                  "date_create": {"type": "integer"},
+                  "channel": {"$ref": "#/definitions/defs_dm_id"},
+                  "type": {
+                    "type": "string",
+                    "enum": ["im"]
+                  }
+                }
+              },
+              {
+                "additionalProperties": false,
+                "type": "object",
+                "required": [
+                  "channel",
+                  "date_create",
+                  "type"
+                ],
+                "properties": {
+                  "date_create": {"type": "integer"},
+                  "channel": {"$ref": "#/definitions/defs_group_id"},
+                  "type": {
+                    "type": "string",
+                    "enum": ["group"]
+                  }
+                }
+              }
+            ]
+          }
+        }
+      }
+    },
+    "objs_comment": {
+      "additionalProperties": false,
+      "type": "object",
+      "required": [
+        "comment",
+        "created",
+        "id",
+        "is_intro",
+        "timestamp",
+        "user"
+      ],
+      "properties": {
+        "is_starred": {"type": "boolean"},
+        "created": {"type": "integer"},
+        "num_stars": {"type": "integer"},
+        "is_intro": {"type": "boolean"},
+        "pinned_info": {"$ref": "#/definitions/defs_pinned_info"},
+        "comment": {"type": "string"},
+        "reactions": {
+          "type": "array",
+          "items": {"$ref": "#/definitions/objs_reaction"}
+        },
+        "id": {"$ref": "#/definitions/defs_comment_id"},
+        "user": {"$ref": "#/definitions/defs_user_id"},
+        "pinned_to": {
+          "type": "array",
+          "items": {"$ref": "#/definitions/defs_channel"}
+        },
+        "timestamp": {"type": "integer"}
+      }
+    },
+    "defs_user_id": {
+      "pattern": "^[UW][A-Z0-9]{2,}$",
+      "type": "string"
+    },
+    "defs_file_id": {
+      "pattern": "^[F][A-Z0-9]{8,}$",
+      "type": "string"
+    },
+    "objs_paging": {
+      "additionalProperties": false,
+      "type": "object",
+      "required": [
+        "page",
+        "total"
+      ],
+      "properties": {
+        "per_page": {"type": "integer"},
+        "total": {"type": "integer"},
+        "pages": {"type": "integer"},
+        "spill": {"type": "integer"},
+        "count": {"type": "integer"},
+        "page": {"type": "integer"}
+      }
+    },
+    "defs_team": {
+      "pattern": "^[T][A-Z0-9]{2,}$",
+      "type": "string"
+    },
+    "objs_user_profile_short": {
+      "additionalProperties": false,
+      "type": "object",
+      "required": [
+        "avatar_hash",
+        "display_name",
+        "first_name",
+        "image_72",
+        "is_restricted",
+        "is_ultra_restricted",
+        "name",
+        "real_name",
+        "team"
+      ],
+      "properties": {
+        "is_ultra_restricted": {"type": "boolean"},
+        "is_restricted": {"type": "boolean"},
+        "real_name_normalized": {"type": "string"},
+        "name": {"type": "string"},
+        "real_name": {"type": "string"},
+        "team": {"$ref": "#/definitions/defs_workspace_id"},
+        "avatar_hash": {"type": "string"},
+        "display_name": {"type": "string"},
+        "image_72": {
+          "format": "uri",
+          "type": "string"
+        },
+        "first_name": {"type": "string"},
+        "display_name_normalized": {"type": "string"}
+      }
+    },
+    "defs_group_id": {
+      "pattern": "^[G][A-Z0-9]{8,}$",
+      "type": "string"
+    },
+    "defs_workspace_id": {
+      "pattern": "^[TE][A-Z0-9]{8,}$",
+      "type": "string"
+    },
+    "defs_bot_id": {
+      "pattern": "^B[A-Z0-9]{8,}$",
+      "type": "string"
+    },
+    "objs_reaction": {
+      "additionalProperties": true,
+      "type": "object",
+      "required": [
+        "count",
+        "name",
+        "users"
+      ],
+      "properties": {
+        "count": {"type": "integer"},
+        "name": {"type": "string"},
+        "users": {
+          "type": "array",
+          "items": {"$ref": "#/definitions/defs_user_id"}
+        }
+      }
+    }
+  }
+}

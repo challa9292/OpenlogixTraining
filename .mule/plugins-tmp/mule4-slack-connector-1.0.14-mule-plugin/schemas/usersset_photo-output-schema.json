@@ -1,0 +1,74 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$ref": "#/definitions/default",
+  "definitions": {
+    "default": {
+      "additionalProperties": false,
+      "type": "object",
+      "required": [
+        "ok",
+        "profile"
+      ],
+      "properties": {
+        "profile": {
+          "additionalProperties": false,
+          "type": "object",
+          "required": [
+            "avatar_hash",
+            "image_1024",
+            "image_192",
+            "image_24",
+            "image_32",
+            "image_48",
+            "image_512",
+            "image_72",
+            "image_original"
+          ],
+          "properties": {
+            "image_32": {
+              "format": "uri",
+              "type": "string"
+            },
+            "image_original": {
+              "format": "uri",
+              "type": "string"
+            },
+            "image_1024": {
+              "format": "uri",
+              "type": "string"
+            },
+            "image_24": {
+              "format": "uri",
+              "type": "string"
+            },
+            "image_192": {
+              "format": "uri",
+              "type": "string"
+            },
+            "image_48": {
+              "format": "uri",
+              "type": "string"
+            },
+            "avatar_hash": {
+              "pattern": "^[0-9a-f]{12}$",
+              "type": "string"
+            },
+            "image_72": {
+              "format": "uri",
+              "type": "string"
+            },
+            "image_512": {
+              "format": "uri",
+              "type": "string"
+            }
+          }
+        },
+        "ok": {"$ref": "#/definitions/defs_ok_true"}
+      }
+    },
+    "defs_ok_true": {
+      "type": "boolean",
+      "enum": [true]
+    }
+  }
+}

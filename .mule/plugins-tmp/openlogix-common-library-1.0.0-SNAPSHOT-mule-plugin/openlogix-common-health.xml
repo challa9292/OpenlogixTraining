@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:ee="http://www.mulesoft.org/schema/mule/ee/core" xmlns:validation="http://www.mulesoft.org/schema/mule/validation"
+	xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/validation http://www.mulesoft.org/schema/mule/validation/current/mule-validation.xsd
+http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/ee/core/current/mule-ee.xsd">
+	<flow name="openlogix-common-healthFlow" doc:id="9d66a291-b4b0-46ac-ab15-557fb0f87e60" >
+		<logger level="INFO" doc:name="Logger" doc:id="4b7e6339-c08b-4f0d-b0a9-2a9589fa2fc4" message='#["common error handler is triggerd"]'/>
+		<validation:is-not-null doc:name="Is not null" doc:id="ce37bd9d-3142-42c3-babd-e32df7f05333" config-ref="Validation_Config" value="#[Mule::p('api.name')!=null]" message='#["Environment variable api.name is required"]'/>
+		<ee:transform doc:name="Transform Message" doc:id="73b2da0d-c3aa-4aae-a273-a51a8c848f2d" >
+			<ee:message >
+				<ee:set-payload ><![CDATA[%dw 2.0
+output application/json
+---
+{
+	"apiName": Mule::p('api.name'),
+	"status": "Running",
+	"success": true,
+	"timeStamp": now()
+}]]></ee:set-payload>
+			</ee:message>
+		</ee:transform>
+		<logger level="INFO" doc:name="Logger" doc:id="df85f7f9-e546-4c5f-a2a1-53165f23d176" message='#["completed common global error handler"]'/>
+	</flow>
+	
+	<validation:config name="Validation_Config" doc:name="Validation Config" doc:id="12bf10b0-924b-4378-ae39-fa41f09ac050">
+	</validation:config>
+
+</mule>

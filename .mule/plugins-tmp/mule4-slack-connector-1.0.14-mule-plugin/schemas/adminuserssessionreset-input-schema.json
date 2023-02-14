@@ -1,0 +1,14 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$ref": "#/definitions/formData",
+  "definitions": {"formData": {
+    "additionalProperties": true,
+    "type": "object",
+    "required": ["user_id"],
+    "properties": {
+      "user_id": {"type": "string"},
+      "mobile_only": {"type": "boolean"},
+      "web_only": {"type": "boolean"}
+    }
+  }}
+}

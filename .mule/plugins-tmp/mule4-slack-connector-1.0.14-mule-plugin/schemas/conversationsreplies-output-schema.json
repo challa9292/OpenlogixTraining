@@ -1,0 +1,153 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$ref": "#/definitions/default",
+  "definitions": {
+    "default": {
+      "additionalProperties": false,
+      "type": "object",
+      "required": [
+        "messages",
+        "ok"
+      ],
+      "properties": {
+        "messages": {
+          "type": "array",
+          "items": {
+            "type": "array",
+            "items": [
+              {
+                "additionalProperties": false,
+                "type": "object",
+                "required": [
+                  "replies",
+                  "reply_count",
+                  "subscribed",
+                  "text",
+                  "thread_ts",
+                  "ts",
+                  "type",
+                  "user"
+                ],
+                "properties": {
+                  "last_read": {"$ref": "#/definitions/defs_ts"},
+                  "reply_users": {
+                    "uniqueItems": true,
+                    "type": "array",
+                    "items": {"$ref": "#/definitions/defs_user_id"}
+                  },
+                  "team": {"$ref": "#/definitions/defs_team"},
+                  "user_profile": {"$ref": "#/definitions/objs_user_profile_short"},
+                  "reply_count": {"type": "integer"},
+                  "type": {"type": "string"},
+                  "user_team": {"$ref": "#/definitions/defs_team"},
+                  "subscribed": {"type": "boolean"},
+                  "unread_count": {"type": "integer"},
+                  "replies": {
+                    "type": "array",
+                    "items": {
+                      "additionalProperties": false,
+                      "type": "object",
+                      "required": [
+                        "ts",
+                        "user"
+                      ],
+                      "properties": {
+                        "user": {"$ref": "#/definitions/defs_user_id"},
+                        "ts": {"$ref": "#/definitions/defs_ts"}
+                      }
+                    }
+                  },
+                  "source_team": {"$ref": "#/definitions/defs_team"},
+                  "thread_ts": {"$ref": "#/definitions/defs_ts"},
+                  "reply_users_count": {"type": "integer"},
+                  "text": {"type": "string"},
+                  "user": {"$ref": "#/definitions/defs_user_id"},
+                  "latest_reply": {"$ref": "#/definitions/defs_ts"},
+                  "ts": {"$ref": "#/definitions/defs_ts"}
+                }
+              },
+              {
+                "additionalProperties": false,
+                "type": "object",
+                "required": [
+                  "parent_user_id",
+                  "text",
+                  "thread_ts",
+                  "ts",
+                  "type",
+                  "user"
+                ],
+                "properties": {
+                  "is_starred": {"type": "boolean"},
+                  "parent_user_id": {"$ref": "#/definitions/defs_user_id"},
+                  "source_team": {"$ref": "#/definitions/defs_team"},
+                  "thread_ts": {"$ref": "#/definitions/defs_ts"},
+                  "team": {"$ref": "#/definitions/defs_team"},
+                  "text": {"type": "string"},
+                  "user_profile": {"$ref": "#/definitions/objs_user_profile_short"},
+                  "type": {"type": "string"},
+                  "user": {"$ref": "#/definitions/defs_user_id"},
+                  "user_team": {"$ref": "#/definitions/defs_team"},
+                  "ts": {"$ref": "#/definitions/defs_ts"}
+                }
+              }
+            ]
+          }
+        },
+        "has_more": {"type": "boolean"},
+        "ok": {"$ref": "#/definitions/defs_ok_true"}
+      }
+    },
+    "defs_user_id": {
+      "pattern": "^[UW][A-Z0-9]{2,}$",
+      "type": "string"
+    },
+    "defs_team": {
+      "pattern": "^[T][A-Z0-9]{2,}$",
+      "type": "string"
+    },
+    "objs_user_profile_short": {
+      "additionalProperties": false,
+      "type": "object",
+      "required": [
+        "avatar_hash",
+        "display_name",
+        "first_name",
+        "image_72",
+        "is_restricted",
+        "is_ultra_restricted",
+        "name",
+        "real_name",
+        "team"
+      ],
+      "properties": {
+        "is_ultra_restricted": {"type": "boolean"},
+        "is_restricted": {"type": "boolean"},
+        "real_name_normalized": {"type": "string"},
+        "name": {"type": "string"},
+        "real_name": {"type": "string"},
+        "team": {"$ref": "#/definitions/defs_workspace_id"},
+        "avatar_hash": {"type": "string"},
+        "display_name": {"type": "string"},
+        "image_72": {
+          "format": "uri",
+          "type": "string"
+        },
+        "first_name": {"type": "string"},
+        "display_name_normalized": {"type": "string"}
+      }
+    },
+    "defs_ok_true": {
+      "type": "boolean",
+      "enum": [true]
+    },
+    "defs_ts": {
+      "pattern": "^\\d{10}\\.\\d{6}$",
+      "type": "string"
+    },
+    "defs_workspace_id": {
+      "pattern": "^[TE][A-Z0-9]{8,}$",
+      "type": "string"
+    }
+  }
+}

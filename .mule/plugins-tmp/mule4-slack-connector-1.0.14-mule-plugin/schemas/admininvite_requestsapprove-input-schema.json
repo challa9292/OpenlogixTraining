@@ -1,0 +1,13 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$ref": "#/definitions/formData",
+  "definitions": {"formData": {
+    "additionalProperties": true,
+    "type": "object",
+    "required": ["invite_request_id"],
+    "properties": {
+      "team_id": {"type": "string"},
+      "invite_request_id": {"type": "string"}
+    }
+  }}
+}

@@ -1,0 +1,114 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$ref": "#/definitions/default",
+  "definitions": {
+    "default": {
+      "additionalProperties": false,
+      "type": "object",
+      "required": [
+        "channel",
+        "message",
+        "ok",
+        "post_at",
+        "scheduled_message_id"
+      ],
+      "properties": {
+        "scheduled_message_id": {
+          "pattern": "^[Q][A-Z0-9]{8,}$",
+          "type": "string"
+        },
+        "channel": {"$ref": "#/definitions/defs_channel"},
+        "message": {
+          "additionalProperties": false,
+          "type": "object",
+          "required": [
+            "bot_id",
+            "team",
+            "text",
+            "type",
+            "user"
+          ],
+          "properties": {
+            "bot_profile": {"$ref": "#/definitions/objs_bot_profile"},
+            "team": {"$ref": "#/definitions/defs_team"},
+            "text": {"type": "string"},
+            "type": {"type": "string"},
+            "user": {"$ref": "#/definitions/defs_user_id"},
+            "bot_id": {"$ref": "#/definitions/defs_bot_id"},
+            "username": {"type": "string"}
+          }
+        },
+        "ok": {"$ref": "#/definitions/defs_ok_true"},
+        "post_at": {"type": "integer"}
+      }
+    },
+    "defs_user_id": {
+      "pattern": "^[UW][A-Z0-9]{2,}$",
+      "type": "string"
+    },
+    "defs_team": {
+      "pattern": "^[T][A-Z0-9]{2,}$",
+      "type": "string"
+    },
+    "defs_app_id": {
+      "pattern": "^A[A-Z0-9]{1,}$",
+      "type": "string"
+    },
+    "defs_channel": {
+      "pattern": "^[CGD][A-Z0-9]{8,}$",
+      "type": "string"
+    },
+    "defs_ok_true": {
+      "type": "boolean",
+      "enum": [true]
+    },
+    "defs_bot_id": {
+      "pattern": "^B[A-Z0-9]{8,}$",
+      "type": "string"
+    },
+    "objs_bot_profile": {
+      "additionalProperties": false,
+      "type": "object",
+      "required": [
+        "app_id",
+        "deleted",
+        "icons",
+        "id",
+        "name",
+        "team_id",
+        "updated"
+      ],
+      "properties": {
+        "deleted": {"type": "boolean"},
+        "name": {"type": "string"},
+        "id": {"$ref": "#/definitions/defs_bot_id"},
+        "team_id": {"$ref": "#/definitions/defs_team"},
+        "icons": {
+          "additionalProperties": false,
+          "type": "object",
+          "required": [
+            "image_36",
+            "image_48",
+            "image_72"
+          ],
+          "properties": {
+            "image_36": {
+              "format": "uri",
+              "type": "string"
+            },
+            "image_48": {
+              "format": "uri",
+              "type": "string"
+            },
+            "image_72": {
+              "format": "uri",
+              "type": "string"
+            }
+          }
+        },
+        "app_id": {"$ref": "#/definitions/defs_app_id"},
+        "updated": {"type": "integer"}
+      }
+    }
+  }
+}

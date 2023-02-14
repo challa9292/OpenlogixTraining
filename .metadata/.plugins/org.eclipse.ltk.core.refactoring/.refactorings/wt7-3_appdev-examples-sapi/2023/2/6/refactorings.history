@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;wt7-3_appdev-examples-sapi/src/main/mule/wt7-1_appdev-examples-sapi.xml&apos; to &apos;wt7-3_appdev-examples-sapi.xml&apos;" description="Rename resource &apos;wt7-1_appdev-examples-sapi.xml&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/main/mule/wt7-1_appdev-examples-sapi.xml" name="wt7-3_appdev-examples-sapi.xml" stamp="1676033496904" updateReferences="true"/>
+</session>

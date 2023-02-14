@@ -1,0 +1,38 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$ref": "#/definitions/default",
+  "definitions": {
+    "default": {
+      "additionalProperties": false,
+      "type": "object",
+      "required": [
+        "members",
+        "ok",
+        "response_metadata"
+      ],
+      "properties": {
+        "members": {
+          "minItems": 1,
+          "uniqueItems": true,
+          "type": "array",
+          "items": {"$ref": "#/definitions/defs_user_id"}
+        },
+        "response_metadata": {
+          "additionalProperties": false,
+          "type": "object",
+          "required": ["next_cursor"],
+          "properties": {"next_cursor": {"type": "string"}}
+        },
+        "ok": {"$ref": "#/definitions/defs_ok_true"}
+      }
+    },
+    "defs_user_id": {
+      "pattern": "^[UW][A-Z0-9]{2,}$",
+      "type": "string"
+    },
+    "defs_ok_true": {
+      "type": "boolean",
+      "enum": [true]
+    }
+  }
+}

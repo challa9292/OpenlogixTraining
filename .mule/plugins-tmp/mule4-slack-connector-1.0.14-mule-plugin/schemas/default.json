@@ -1,0 +1,17 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$ref": "#/definitions/default",
+  "definitions": {"default": {
+    "x-amf-examples": {"application/json52": {"ok": true}},
+    "description": "This method either only returns a brief _OK_ response or a verbose schema is not available for this method.",
+    "additionalProperties": true,
+    "title": "Default success template",
+    "type": "object",
+    "required": ["ok"],
+    "properties": {"ok": {
+      "title": "default success response",
+      "type": "boolean",
+      "enum": [true]
+    }}
+  }}
+}

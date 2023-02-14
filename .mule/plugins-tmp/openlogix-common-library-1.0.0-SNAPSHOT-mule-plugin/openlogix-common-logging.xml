@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:ee="http://www.mulesoft.org/schema/mule/ee/core" xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/ee/core/current/mule-ee.xsd">
+	<flow name="openlogix-common-start-loggingFlow" doc:id="68f2a70e-d1fc-449f-9488-49905e7bef05" >
+		<logger level="INFO" doc:name="Logger" doc:id="486ddc9a-7594-4b8b-91fe-ea036c8fba43" message='#["Request Received" ++ correlationId]'/>
+	</flow>
+	<flow name="openlogix-common-end-loggingFlow1" doc:id="4a2cd6f8-4e76-48ac-a077-e965d87b644b" >
+		<logger level="INFO" doc:name="Logger" doc:id="a43b38a6-ad3a-45ab-b212-077b6725bb45" message='#["Response sent" ++ correlationId]'/>
+	</flow>
+</mule>

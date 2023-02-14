@@ -1,0 +1,27 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$ref": "#/definitions/default",
+  "definitions": {
+    "default": {
+      "additionalProperties": true,
+      "type": "object",
+      "required": [
+        "ok",
+        "presence"
+      ],
+      "properties": {
+        "auto_away": {"type": "boolean"},
+        "manual_away": {"type": "boolean"},
+        "last_activity": {"type": "integer"},
+        "connection_count": {"type": "integer"},
+        "online": {"type": "boolean"},
+        "ok": {"$ref": "#/definitions/defs_ok_true"},
+        "presence": {"type": "string"}
+      }
+    },
+    "defs_ok_true": {
+      "type": "boolean",
+      "enum": [true]
+    }
+  }
+}

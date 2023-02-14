@@ -1,0 +1,29 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$ref": "#/definitions/default",
+  "definitions": {
+    "default": {
+      "additionalProperties": false,
+      "type": "object",
+      "required": [
+        "ok",
+        "users"
+      ],
+      "properties": {
+        "ok": {"$ref": "#/definitions/defs_ok_true"},
+        "users": {
+          "type": "array",
+          "items": {"$ref": "#/definitions/defs_user_id"}
+        }
+      }
+    },
+    "defs_user_id": {
+      "pattern": "^[UW][A-Z0-9]{2,}$",
+      "type": "string"
+    },
+    "defs_ok_true": {
+      "type": "boolean",
+      "enum": [true]
+    }
+  }
+}

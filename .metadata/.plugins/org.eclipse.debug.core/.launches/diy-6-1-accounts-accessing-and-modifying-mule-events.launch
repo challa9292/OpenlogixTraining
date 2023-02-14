@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<launchConfiguration type="org.mule.tooling.runtime.muleServerLaunchType">
+    <stringAttribute key="launch_mule_server_version" value="org.mule.tooling.server.4.4.0.ee"/>
+    <stringAttribute key="mule-agent-port" value="50096"/>
+    <stringAttribute key="mule-agent-token-auth" value="87835fd8-5a80-4c12-98e2-c24943f4e0ed"/>
+    <listAttribute key="mule-project-names">
+        <listEntry value="diy-6-1-accounts-accessing-and-modifying-mule-events"/>
+    </listAttribute>
+    <stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="diy-6-1-accounts-accessing-and-modifying-mule-events"/>
+    <stringAttribute key="org.eclipse.jdt.launching.VM_ARGUMENTS" value="-M-XX:-UseBiasedLocking -M-Dfile.encoding=UTF-8 -M-XX:+UseG1GC -M-XX:+UseStringDeduplication"/>
+</launchConfiguration>

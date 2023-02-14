@@ -1,0 +1,52 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$ref": "#/definitions/default",
+  "definitions": {
+    "default": {
+      "additionalProperties": false,
+      "type": "object",
+      "required": ["ok"],
+      "properties": {
+        "ok": {"$ref": "#/definitions/defs_ok_true"},
+        "prefs": {
+          "additionalProperties": true,
+          "type": "object",
+          "properties": {
+            "can_thread": {
+              "additionalProperties": true,
+              "type": "object",
+              "properties": {
+                "type": {
+                  "type": "array",
+                  "items": {"type": "string"}
+                },
+                "user": {
+                  "type": "array",
+                  "items": {"type": "string"}
+                }
+              }
+            },
+            "who_can_post": {
+              "additionalProperties": true,
+              "type": "object",
+              "properties": {
+                "type": {
+                  "type": "array",
+                  "items": {"type": "string"}
+                },
+                "user": {
+                  "type": "array",
+                  "items": {"type": "string"}
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "defs_ok_true": {
+      "type": "boolean",
+      "enum": [true]
+    }
+  }
+}

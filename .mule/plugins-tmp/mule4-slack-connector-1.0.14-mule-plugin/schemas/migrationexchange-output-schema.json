@@ -1,0 +1,36 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$ref": "#/definitions/default",
+  "definitions": {
+    "default": {
+      "additionalProperties": true,
+      "type": "object",
+      "required": [
+        "enterprise_id",
+        "ok",
+        "team_id"
+      ],
+      "properties": {
+        "user_id_map": {
+          "additionalProperties": true,
+          "type": "object"
+        },
+        "team_id": {"$ref": "#/definitions/defs_team"},
+        "enterprise_id": {"type": "string"},
+        "ok": {"$ref": "#/definitions/defs_ok_true"},
+        "invalid_user_ids": {
+          "type": "array",
+          "items": {"type": "string"}
+        }
+      }
+    },
+    "defs_team": {
+      "pattern": "^[T][A-Z0-9]{2,}$",
+      "type": "string"
+    },
+    "defs_ok_true": {
+      "type": "boolean",
+      "enum": [true]
+    }
+  }
+}

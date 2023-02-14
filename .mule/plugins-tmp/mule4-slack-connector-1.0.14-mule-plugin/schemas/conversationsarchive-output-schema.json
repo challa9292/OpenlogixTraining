@@ -1,0 +1,17 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$ref": "#/definitions/default",
+  "definitions": {"default": {
+    "x-amf-examples": {"application/json142": {"ok": true}},
+    "description": "Schema for successful response conversations.archive method",
+    "additionalProperties": false,
+    "title": "conversations.archive success schema",
+    "type": "object",
+    "required": ["ok"],
+    "properties": {"ok": {
+      "title": "default success response",
+      "type": "boolean",
+      "enum": [true]
+    }}
+  }}
+}

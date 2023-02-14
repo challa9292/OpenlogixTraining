@@ -1,0 +1,22 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$ref": "#/definitions/formData",
+  "definitions": {"formData": {
+    "additionalProperties": true,
+    "type": "object",
+    "required": [
+      "ts",
+      "channel"
+    ],
+    "properties": {
+      "link_names": {"type": "string"},
+      "attachments": {"type": "string"},
+      "as_user": {"type": "string"},
+      "blocks": {"type": "string"},
+      "channel": {"type": "string"},
+      "parse": {"type": "string"},
+      "text": {"type": "string"},
+      "ts": {"type": "string"}
+    }
+  }}
+}

@@ -1,0 +1,18 @@
+{
+  "channel": "C1H9RESGL",
+  "message": {
+    "attachments": [{
+      "id": 1,
+      "text": "This is an attachment",
+      "fallback": "This is an attachment's fallback"
+    }],
+    "subtype": "bot_message",
+    "text": "Here's a message for you",
+    "type": "message",
+    "bot_id": "B19LU7CSY",
+    "ts": "1503435956.000247",
+    "username": "ecto1"
+  },
+  "ok": true,
+  "ts": "1503435956.000247"
+}

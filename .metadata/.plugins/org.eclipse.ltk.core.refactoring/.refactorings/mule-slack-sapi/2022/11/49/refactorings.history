@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;mule-slack-sapi/src/main/mule/mulesoft-slack-sapi.xml&apos; to &apos;mule-slack-sapi.xml&apos;" description="Rename resource &apos;mulesoft-slack-sapi.xml&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/main/mule/mulesoft-slack-sapi.xml" name="mule-slack-sapi.xml" stamp="1669649495653" updateReferences="true"/>
+</session>

@@ -1,0 +1,4 @@
+eclipse.preferences.version=1
+expiration.time=15
+org.mule.tooling.amc.apps={"userProjectMap"\:{"raghavendra12345"\:{"training4-american-ws-5-1"\:"{\\"applicationName\\"\:\\"training4-american-ws-5-1\\",\\"muleRuntime\\"\:\\"4.4.0\\",\\"properties\\"\:{}}","DIY-4-2-accounts-implementation-api"\:"{\\"applicationName\\"\:\\"diy-4-2-accounts-implementation-api\\",\\"muleRuntime\\"\:\\"4.4.0\\",\\"properties\\"\:{}}"}}}
+org.mule.tooling.ui.properties.enable.api.dependencies=true

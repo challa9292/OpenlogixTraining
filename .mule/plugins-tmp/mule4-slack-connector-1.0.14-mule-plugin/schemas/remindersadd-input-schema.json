@@ -1,0 +1,24 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$ref": "#/definitions/formData",
+  "definitions": {
+    "formData": {
+      "type": "object",
+      "additionalProperties": true,
+      "properties": {
+        "text": {
+          "description": "The content of the reminder",
+          "type": "string"
+        },
+        "user": {
+          "description": "The user who will receive the reminder. If no user is specified, the reminder will go to user who created it.",
+          "type": "string"
+        },
+        "time": {
+          "description": "When this reminder should happen: the Unix timestamp (up to five years from now), the number of seconds until the reminder (if within 24 hours), or a natural language description (Ex. \"in 15 minutes,\" or \"every Thursday\")",
+          "type": "string"
+        }
+      }
+    }
+  }
+}

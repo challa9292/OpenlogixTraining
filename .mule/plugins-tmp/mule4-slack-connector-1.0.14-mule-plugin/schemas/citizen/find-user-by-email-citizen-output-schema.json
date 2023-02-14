@@ -1,0 +1,99 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$ref": "#/definitions/default",
+  "definitions": {
+    "default": {
+      "description": "Schema for successful response of Find User by Email Citizen operation",
+      "additionalProperties": true,
+      "title": "Find User by Email result",
+      "type": "object",
+      "required": [
+        "name",
+        "realName",
+        "displayName",
+        "id",
+        "teamId",
+        "timeZoneLabel",
+        "timeZoneOffset",
+        "deleted",
+        "title",
+        "email",
+        "statusText",
+        "updated",
+        "isAdmin",
+        "isOwner",
+        "isPrimaryOwner",
+        "isRestricted",
+        "isUltraRestricted",
+        "isBot",
+        "isAppUser",
+        "has2fa"
+      ],
+      "properties": {
+        "has2fa": {
+          "type": "boolean"
+        },
+        "isRestricted": {
+          "type": "boolean"
+        },
+        "timeZoneLabel": {
+          "type": "string"
+        },
+        "isPrimary": {
+          "type": "boolean"
+        },
+        "realName": {
+          "type": "string"
+        },
+        "teamId": {
+          "title": "Team ID",
+          "type": "string"
+        },
+        "isAdmin": {
+          "type": "boolean"
+        },
+        "isAppUser": {
+          "type": "boolean"
+        },
+        "timeZoneOffset": {
+          "type": "number"
+        },
+        "id": {
+          "title": "User ID",
+          "type": "string"
+        },
+        "isBot": {
+          "type": "boolean"
+        },
+        "isUltraRestricted": {
+          "type": "boolean"
+        },
+        "isOwner": {
+          "type": "boolean"
+        },
+        "deleted": {
+          "type": "boolean"
+        },
+        "name": {
+          "type": "string"
+        },
+        "updated": {
+          "type": "number"
+        },
+        "title": {
+          "type": "string"
+        },
+        "email": {
+          "format": "email",
+          "type": "string"
+        },
+        "displayName": {
+          "type": "string"
+        },
+        "statusText": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

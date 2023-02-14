@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;diy-6-1-accounts-accessing-and-modifying-mule-events/src/main/mule/diy-6-1-accounts-accessing-and-modifying-mule-events.xml&apos; to &apos;csr-interface.xml&apos;" description="Rename resource &apos;diy-6-1-accounts-accessing-and-modifying-mule-events.xml&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/main/mule/diy-6-1-accounts-accessing-and-modifying-mule-events.xml" name="csr-interface.xml" stamp="1676016772184" updateReferences="true"/>
+</session>

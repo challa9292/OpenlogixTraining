@@ -1,0 +1,26 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$ref": "#/definitions/default",
+  "definitions": {
+    "default": {
+      "description": "Schema for successful response of Send direct message to user Citizen operation",
+      "additionalProperties": false,
+      "title": "Send direct message to user result",
+      "type": "object",
+      "required": [
+        "channelId",
+        "messageSentTime"
+      ],
+      "properties": {
+        "channelId": {
+          "title": "Channel Id",
+          "type": "string"
+        },
+        "messageSentTime": {
+          "title": "Timestamp in format 0123456789.012345",
+          "type": "string"
+        }
+      }
+    }
+  }
+}

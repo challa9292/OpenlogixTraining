@@ -1,0 +1,22 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$ref": "#/definitions/formData",
+  "definitions": {"formData": {
+    "additionalProperties": true,
+    "type": "object",
+    "properties": {
+      "link_names": {"type": "boolean"},
+      "attachments": {"type": "string"},
+      "as_user": {"type": "boolean"},
+      "thread_ts": {"type": "number"},
+      "blocks": {"type": "string"},
+      "unfurl_media": {"type": "boolean"},
+      "channel": {"type": "string"},
+      "unfurl_links": {"type": "boolean"},
+      "reply_broadcast": {"type": "boolean"},
+      "text": {"type": "string"},
+      "parse": {"type": "string"},
+      "post_at": {"type": "string"}
+    }
+  }}
+}

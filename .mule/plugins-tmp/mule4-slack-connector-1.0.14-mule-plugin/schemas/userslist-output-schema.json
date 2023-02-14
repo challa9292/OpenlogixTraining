@@ -1,0 +1,350 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$ref": "#/definitions/default",
+  "definitions": {
+    "objs_team_profile_field": {
+      "additionalProperties": false,
+      "type": "object",
+      "required": [
+        "hint",
+        "id",
+        "label",
+        "options",
+        "ordering",
+        "type"
+      ],
+      "properties": {
+        "ordering": {"type": "number"},
+        "hint": {"type": "string"},
+        "possible_values": {
+          "type": "array",
+          "items": {"type": "string"}
+        },
+        "is_hidden": {"type": "boolean"},
+        "options": {
+          "type": "array",
+          "items": {"type": "string"}
+        },
+        "id": {
+          "pattern": "^X[a-zA-Z0-9]{9,}$",
+          "type": "string"
+        },
+        "label": {"type": "string"},
+        "type": {
+          "type": "string",
+          "enum": [
+            "text",
+            "date",
+            "link",
+            "mailto",
+            "options_list",
+            "user"
+          ]
+        },
+        "field_name": {"type": "string"}
+      }
+    },
+    "defs_app_id": {
+      "pattern": "^A[A-Z0-9]{1,}$",
+      "type": "string"
+    },
+    "defs_ok_true": {
+      "type": "boolean",
+      "enum": [true]
+    },
+    "objs_user": {
+      "type": "array",
+      "items": [
+        {
+          "additionalProperties": false,
+          "type": "object",
+          "required": [
+            "deleted",
+            "id",
+            "is_app_user",
+            "is_bot",
+            "name",
+            "profile",
+            "updated"
+          ],
+          "properties": {
+            "color": {
+              "pattern": "^[a-fA-F0-9]{6}$",
+              "type": "string"
+            },
+            "is_invited_user": {"type": "boolean"},
+            "has_2fa": {"type": "boolean"},
+            "is_restricted": {"type": "boolean"},
+            "tz": {
+              "type": "array",
+              "items": [
+                {"type": "null"},
+                {"type": "string"}
+              ]
+            },
+            "tz_label": {"type": "string"},
+            "is_primary_owner": {"type": "boolean"},
+            "team_profile": {
+              "additionalProperties": false,
+              "type": "object",
+              "required": ["fields"],
+              "properties": {"fields": {
+                "minItems": 1,
+                "uniqueItems": true,
+                "type": "array",
+                "items": {"$ref": "#/definitions/objs_team_profile_field"}
+              }}
+            },
+            "real_name": {"type": "string"},
+            "team_id": {"$ref": "#/definitions/defs_team"},
+            "locale": {"type": "string"},
+            "is_admin": {"type": "boolean"},
+            "is_app_user": {"type": "boolean"},
+            "tz_offset": {"type": "number"},
+            "id": {"$ref": "#/definitions/defs_user_id"},
+            "is_bot": {"type": "boolean"},
+            "presence": {"type": "string"},
+            "is_ultra_restricted": {"type": "boolean"},
+            "is_owner": {"type": "boolean"},
+            "profile": {"$ref": "#/definitions/objs_user_profile"},
+            "is_external": {"type": "boolean"},
+            "team": {"$ref": "#/definitions/defs_team"},
+            "enterprise_user": {"$ref": "#/definitions/objs_enterprise_user"},
+            "deleted": {"type": "boolean"},
+            "two_factor_type": {"type": "string"},
+            "name": {"type": "string"},
+            "updated": {"type": "number"}
+          }
+        },
+        {
+          "additionalProperties": false,
+          "type": "object",
+          "required": [
+            "deleted",
+            "id",
+            "is_app_user",
+            "is_bot",
+            "is_restricted",
+            "is_ultra_restricted",
+            "name",
+            "profile",
+            "updated"
+          ],
+          "properties": {
+            "color": {
+              "pattern": "^$",
+              "type": "string"
+            },
+            "has_2fa": {"type": "boolean"},
+            "is_restricted": {"type": "boolean"},
+            "tz": {
+              "type": "array",
+              "items": [
+                {"type": "null"},
+                {"type": "string"}
+              ]
+            },
+            "tz_label": {"type": "string"},
+            "is_primary_owner": {"type": "boolean"},
+            "team_profile": {
+              "additionalProperties": false,
+              "type": "object",
+              "required": ["fields"],
+              "properties": {"fields": {
+                "minItems": 1,
+                "uniqueItems": true,
+                "type": "array",
+                "items": {"$ref": "#/definitions/objs_team_profile_field"}
+              }}
+            },
+            "real_name": {"type": "string"},
+            "team_id": {"$ref": "#/definitions/defs_team"},
+            "locale": {"type": "string"},
+            "is_admin": {"type": "boolean"},
+            "is_app_user": {"type": "boolean"},
+            "tz_offset": {"type": "number"},
+            "id": {"$ref": "#/definitions/defs_user_id"},
+            "is_bot": {"type": "boolean"},
+            "presence": {"type": "string"},
+            "is_ultra_restricted": {"type": "boolean"},
+            "teams": {
+              "minItems": 1,
+              "uniqueItems": true,
+              "type": "array",
+              "items": {"$ref": "#/definitions/defs_workspace_id"}
+            },
+            "is_owner": {"type": "boolean"},
+            "profile": {"$ref": "#/definitions/objs_user_profile"},
+            "is_external": {"type": "boolean"},
+            "enterprise_user": {"$ref": "#/definitions/objs_enterprise_user"},
+            "deleted": {"type": "boolean"},
+            "two_factor_type": {"type": "string"},
+            "name": {"type": "string"},
+            "updated": {"type": "number"}
+          }
+        }
+      ]
+    },
+    "defs_enterprise_name": {"type": "string"},
+    "objs_user_profile": {
+      "additionalProperties": false,
+      "type": "object",
+      "required": [
+        "avatar_hash",
+        "display_name",
+        "display_name_normalized",
+        "real_name",
+        "real_name_normalized"
+      ],
+      "properties": {
+        "image_32": {
+          "format": "uri",
+          "type": "string"
+        },
+        "status_emoji": {"type": "string"},
+        "guest_invited_by": {"type": "string"},
+        "api_app_id": {"$ref": "#/definitions/defs_app_id"},
+        "image_192": {
+          "format": "uri",
+          "type": "string"
+        },
+        "real_name": {"type": "string"},
+        "title": {"type": "string"},
+        "status_text_canonical": {"type": "string"},
+        "skype": {"type": "string"},
+        "image_original": {
+          "format": "uri",
+          "type": "string"
+        },
+        "guest_expiration_ts": {"type": "integer"},
+        "real_name_normalized": {"type": "string"},
+        "avatar_hash": {"type": "string"},
+        "first_name": {"type": "string"},
+        "bot_id": {"$ref": "#/definitions/defs_bot_id"},
+        "email": {
+          "format": "email",
+          "type": "string"
+        },
+        "image_512": {
+          "format": "uri",
+          "type": "string"
+        },
+        "image_1024": {
+          "format": "uri",
+          "type": "string"
+        },
+        "teams": {"$ref": "#/definitions/defs_workspace_id"},
+        "image_24": {
+          "format": "uri",
+          "type": "string"
+        },
+        "last_name": {"type": "string"},
+        "image_48": {
+          "format": "uri",
+          "type": "string"
+        },
+        "team": {"$ref": "#/definitions/defs_workspace_id"},
+        "display_name": {"type": "string"},
+        "always_active": {"type": "boolean"},
+        "status_expiration": {"type": "integer"},
+        "phone": {"type": "string"},
+        "is_custom_image": {"type": "boolean"},
+        "status_text": {"type": "string"},
+        "fields": {"anyOf": [
+          {
+            "additionalProperties": true,
+            "type": "object"
+          },
+          {"type": "null"},
+          {
+            "type": "array",
+            "items": {
+              "additionalProperties": true,
+              "type": "object"
+            }
+          }
+        ]},
+        "image_72": {
+          "format": "uri",
+          "type": "string"
+        },
+        "display_name_normalized": {"type": "string"}
+      }
+    },
+    "default": {
+      "additionalProperties": false,
+      "type": "object",
+      "required": [
+        "cache_ts",
+        "members",
+        "ok"
+      ],
+      "properties": {
+        "cache_ts": {"type": "integer"},
+        "members": {
+          "minItems": 1,
+          "uniqueItems": true,
+          "type": "array",
+          "items": {"$ref": "#/definitions/objs_user"}
+        },
+        "response_metadata": {"$ref": "#/definitions/objs_response_metadata"},
+        "ok": {"$ref": "#/definitions/defs_ok_true"}
+      }
+    },
+    "objs_enterprise_user": {
+      "additionalProperties": false,
+      "type": "object",
+      "required": [
+        "enterprise_id",
+        "enterprise_name",
+        "id",
+        "is_admin",
+        "is_owner",
+        "teams"
+      ],
+      "properties": {
+        "is_admin": {"type": "boolean"},
+        "teams": {
+          "minItems": 1,
+          "uniqueItems": true,
+          "type": "array",
+          "items": {"$ref": "#/definitions/defs_team"}
+        },
+        "is_owner": {"type": "boolean"},
+        "id": {"$ref": "#/definitions/defs_enterprise_user_id"},
+        "enterprise_id": {"$ref": "#/definitions/defs_enterprise_id"},
+        "enterprise_name": {"$ref": "#/definitions/defs_enterprise_name"}
+      }
+    },
+    "defs_user_id": {
+      "pattern": "^[UW][A-Z0-9]{2,}$",
+      "type": "string"
+    },
+    "defs_team": {
+      "pattern": "^[T][A-Z0-9]{2,}$",
+      "type": "string"
+    },
+    "objs_response_metadata": {
+      "additionalProperties": false,
+      "type": "object",
+      "required": ["next_cursor"],
+      "properties": {"next_cursor": {"type": "string"}}
+    },
+    "defs_enterprise_id": {
+      "pattern": "^[E][A-Z0-9]{8,}$",
+      "type": "string"
+    },
+    "defs_workspace_id": {
+      "pattern": "^[TE][A-Z0-9]{8,}$",
+      "type": "string"
+    },
+    "defs_enterprise_user_id": {
+      "pattern": "^[W][A-Z0-9]{8,}$",
+      "type": "string"
+    },
+    "defs_bot_id": {
+      "pattern": "^B[A-Z0-9]{8,}$",
+      "type": "string"
+    }
+  }
+}

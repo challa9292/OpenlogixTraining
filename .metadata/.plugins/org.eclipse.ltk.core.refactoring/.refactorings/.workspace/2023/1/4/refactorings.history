@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="Delete resource &apos;products-sapi&apos;" deleteContents="true" description="Delete resource &apos;products-sapi&apos;" element1="/products-sapi" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1674828280873"/>&#x0A;<refactoring comment="Delete resource &apos;openlogix-products-sapi&apos;" deleteContents="true" description="Delete resource &apos;openlogix-products-sapi&apos;" element1="/openlogix-products-sapi" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1674828550278"/>
+</session>

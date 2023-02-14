@@ -1,0 +1,40 @@
+{
+  "channel": {
+    "is_private": false,
+    "purpose": {
+      "last_set": 0,
+      "creator": "",
+      "value": ""
+    },
+    "is_pending_ext_shared": false,
+    "unread_count": 0,
+    "pending_shared": [],
+    "is_channel": true,
+    "is_shared": false,
+    "id": "C0EAQDV4Z",
+    "previous_names": [],
+    "latest": null,
+    "last_read": "0000000000.000000",
+    "creator": "U0123456",
+    "is_im": false,
+    "is_member": true,
+    "is_mpim": false,
+    "created": 1504554479,
+    "is_ext_shared": false,
+    "name_normalized": "endeavor",
+    "priority": 0,
+    "unread_count_display": 0,
+    "is_group": false,
+    "unlinked": 0,
+    "is_archived": false,
+    "is_general": false,
+    "name": "endeavor",
+    "topic": {
+      "last_set": 0,
+      "creator": "",
+      "value": ""
+    },
+    "is_org_shared": false
+  },
+  "ok": true
+}

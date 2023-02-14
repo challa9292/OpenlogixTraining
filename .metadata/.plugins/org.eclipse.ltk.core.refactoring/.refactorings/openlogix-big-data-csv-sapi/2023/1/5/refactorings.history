@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Move element &apos;get-file.xml&apos; to &apos;openlogix-big-data-csv-sapi/src/main/mule/implementation&apos;&#x0D;&#x0A;- Original project: &apos;openlogix-big-data-csv-sapi&apos;&#x0D;&#x0A;- Destination element: &apos;openlogix-big-data-csv-sapi/src/main/mule/implementation&apos;&#x0D;&#x0A;- Original element: &apos;get-file.xml&apos;&#x0D;&#x0A;- Update references to refactored element" description="Move file" destination="/src\/main\/mule&lt;implementation" element1="src/main/mule/get-file.xml" files="1" flags="589830" folders="0" id="org.eclipse.jdt.ui.move" policy="org.eclipse.jdt.ui.moveResources" qualified="false" references="true" stamp="1675110487194" units="0" version="1.0"/>
+</session>

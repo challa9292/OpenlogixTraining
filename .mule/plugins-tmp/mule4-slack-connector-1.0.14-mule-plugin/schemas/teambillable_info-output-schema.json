@@ -1,0 +1,25 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$ref": "#/definitions/default",
+  "definitions": {
+    "default": {
+      "additionalProperties": false,
+      "type": "object",
+      "required": [
+        "billable_info",
+        "ok"
+      ],
+      "properties": {
+        "billable_info": {
+          "additionalProperties": false,
+          "type": "object"
+        },
+        "ok": {"$ref": "#/definitions/defs_ok_true"}
+      }
+    },
+    "defs_ok_true": {
+      "type": "boolean",
+      "enum": [true]
+    }
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$ref": "#/definitions/default",
+  "definitions": {
+    "default": {
+      "additionalProperties": false,
+      "type": "object",
+      "required": [
+        "channel",
+        "message",
+        "ok",
+        "text",
+        "ts"
+      ],
+      "properties": {
+        "channel": {"type": "string"},
+        "text": {"type": "string"},
+        "message": {
+          "additionalProperties": true,
+          "type": "object",
+          "required": ["text"],
+          "properties": {
+            "attachments": {
+              "type": "array",
+              "items": {
+                "additionalProperties": true,
+                "type": "object"
+              }
+            },
+            "blocks": {"$ref": "#/definitions/blocks"},
+            "text": {"type": "string"}
+          }
+        },
+        "ok": {"$ref": "#/definitions/defs_ok_true"},
+        "ts": {"type": "string"}
+      }
+    },
+    "blocks": {
+      "type": "array",
+      "items": {
+        "additionalProperties": true,
+        "type": "object",
+        "required": ["type"],
+        "properties": {"type": {"type": "string"}}
+      }
+    },
+    "defs_ok_true": {
+      "type": "boolean",
+      "enum": [true]
+    }
+  }
+}

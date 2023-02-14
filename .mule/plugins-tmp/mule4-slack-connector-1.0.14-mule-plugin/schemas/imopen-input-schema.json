@@ -1,0 +1,13 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$ref": "#/definitions/formData",
+  "definitions": {"formData": {
+    "additionalProperties": true,
+    "type": "object",
+    "properties": {
+      "return_im": {"type": "boolean"},
+      "include_locale": {"type": "boolean"},
+      "user": {"type": "string"}
+    }
+  }}
+}

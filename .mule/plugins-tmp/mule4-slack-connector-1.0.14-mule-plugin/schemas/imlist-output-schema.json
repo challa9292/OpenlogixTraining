@@ -1,0 +1,67 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$ref": "#/definitions/default",
+  "definitions": {
+    "default": {
+      "additionalProperties": false,
+      "type": "object",
+      "required": [
+        "ims",
+        "ok"
+      ],
+      "properties": {
+        "response_metadata": {"$ref": "#/definitions/objs_response_metadata"},
+        "ok": {"$ref": "#/definitions/defs_ok_true"},
+        "ims": {
+          "uniqueItems": true,
+          "type": "array",
+          "items": {"$ref": "#/definitions/objs_im"}
+        }
+      }
+    },
+    "defs_user_id": {
+      "pattern": "^[UW][A-Z0-9]{2,}$",
+      "type": "string"
+    },
+    "defs_dm_id": {
+      "pattern": "^[D][A-Z0-9]{8,}$",
+      "type": "string"
+    },
+    "defs_ok_true": {
+      "type": "boolean",
+      "enum": [true]
+    },
+    "objs_response_metadata": {
+      "additionalProperties": false,
+      "type": "object",
+      "required": ["next_cursor"],
+      "properties": {"next_cursor": {"type": "string"}}
+    },
+    "objs_im": {
+      "additionalProperties": false,
+      "type": "object",
+      "required": [
+        "created",
+        "id",
+        "is_im",
+        "is_org_shared",
+        "is_user_deleted",
+        "user"
+      ],
+      "properties": {
+        "is_user_deleted": {"type": "boolean"},
+        "is_app_home": {"type": "boolean"},
+        "is_archived": {"type": "boolean"},
+        "is_frozen": {"type": "boolean"},
+        "is_im": {"type": "boolean"},
+        "created": {"type": "integer"},
+        "is_shared": {"type": "boolean"},
+        "id": {"$ref": "#/definitions/defs_dm_id"},
+        "is_ext_shared": {"type": "boolean"},
+        "priority": {"type": "number"},
+        "is_org_shared": {"type": "boolean"},
+        "user": {"$ref": "#/definitions/defs_user_id"}
+      }
+    }
+  }
+}

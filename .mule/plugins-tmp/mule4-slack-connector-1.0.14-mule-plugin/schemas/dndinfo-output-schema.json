@@ -1,0 +1,32 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$ref": "#/definitions/default",
+  "definitions": {
+    "default": {
+      "additionalProperties": false,
+      "type": "object",
+      "required": [
+        "dnd_enabled",
+        "next_dnd_end_ts",
+        "next_dnd_start_ts",
+        "ok",
+        "snooze_enabled",
+        "snooze_endtime",
+        "snooze_remaining"
+      ],
+      "properties": {
+        "next_dnd_end_ts": {"type": "integer"},
+        "snooze_endtime": {"type": "integer"},
+        "dnd_enabled": {"type": "boolean"},
+        "next_dnd_start_ts": {"type": "integer"},
+        "snooze_enabled": {"type": "boolean"},
+        "snooze_remaining": {"type": "integer"},
+        "ok": {"$ref": "#/definitions/defs_ok_true"}
+      }
+    },
+    "defs_ok_true": {
+      "type": "boolean",
+      "enum": [true]
+    }
+  }
+}

@@ -1,0 +1,76 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$ref": "#/definitions/default",
+  "definitions": {
+    "default": {
+      "additionalProperties": false,
+      "type": "object",
+      "required": [
+        "bot",
+        "ok"
+      ],
+      "properties": {
+        "bot": {
+          "additionalProperties": false,
+          "type": "object",
+          "required": [
+            "app_id",
+            "deleted",
+            "icons",
+            "id",
+            "name",
+            "updated"
+          ],
+          "properties": {
+            "deleted": {"type": "boolean"},
+            "user_id": {"$ref": "#/definitions/defs_user_id"},
+            "name": {"type": "string"},
+            "id": {"$ref": "#/definitions/defs_bot_id"},
+            "icons": {
+              "additionalProperties": false,
+              "type": "object",
+              "required": [
+                "image_36",
+                "image_48",
+                "image_72"
+              ],
+              "properties": {
+                "image_36": {
+                  "format": "uri",
+                  "type": "string"
+                },
+                "image_48": {
+                  "format": "uri",
+                  "type": "string"
+                },
+                "image_72": {
+                  "format": "uri",
+                  "type": "string"
+                }
+              }
+            },
+            "app_id": {"$ref": "#/definitions/defs_app_id"},
+            "updated": {"type": "integer"}
+          }
+        },
+        "ok": {"$ref": "#/definitions/defs_ok_true"}
+      }
+    },
+    "defs_user_id": {
+      "pattern": "^[UW][A-Z0-9]{2,}$",
+      "type": "string"
+    },
+    "defs_app_id": {
+      "pattern": "^A[A-Z0-9]{1,}$",
+      "type": "string"
+    },
+    "defs_ok_true": {
+      "type": "boolean",
+      "enum": [true]
+    },
+    "defs_bot_id": {
+      "pattern": "^B[A-Z0-9]{8,}$",
+      "type": "string"
+    }
+  }
+}

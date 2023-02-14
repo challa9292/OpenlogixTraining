@@ -1,0 +1,15 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$ref": "#/definitions/formData",
+  "definitions": {"formData": {
+    "additionalProperties": true,
+    "type": "object",
+    "required": ["id"],
+    "properties": {
+      "join_url": {"type": "string"},
+      "desktop_app_join_url": {"type": "string"},
+      "id": {"type": "string"},
+      "title": {"type": "string"}
+    }
+  }}
+}

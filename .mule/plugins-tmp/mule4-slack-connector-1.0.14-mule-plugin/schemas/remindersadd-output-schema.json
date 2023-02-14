@@ -1,0 +1,54 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$ref": "#/definitions/default",
+  "definitions": {"default": {
+    "x-amf-examples": {"application/json294": {"ok": true}},
+    "description": "Schema for successful response from reminders.add method",
+    "additionalProperties": false,
+    "title": "reminders.add schema",
+    "type": "object",
+    "required": [
+      "ok",
+      "reminder"
+    ],
+    "properties": {
+      "reminder": {
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "creator",
+          "id",
+          "recurring",
+          "text",
+          "user"
+        ],
+        "properties": {
+          "creator": {
+            "pattern": "^[UW][A-Z0-9]{2,}$",
+            "title": "User ID",
+            "type": "string"
+          },
+          "recurring": {"type": "boolean"},
+          "complete_ts": {"type": "integer"},
+          "id": {
+            "pattern": "^Rm[A-Z0-9]{8,}$",
+            "title": "Reminder ID",
+            "type": "string"
+          },
+          "text": {"type": "string"},
+          "time": {"type": "integer"},
+          "user": {
+            "pattern": "^[UW][A-Z0-9]{2,}$",
+            "title": "User ID",
+            "type": "string"
+          }
+        }
+      },
+      "ok": {
+        "title": "default success response",
+        "type": "boolean",
+        "enum": [true]
+      }
+    }
+  }}
+}

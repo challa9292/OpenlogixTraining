@@ -1,0 +1,23 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$ref": "#/definitions/default",
+  "definitions": {
+    "default": {
+      "additionalProperties": false,
+      "type": "object",
+      "required": ["ok"],
+      "properties": {
+        "ok": {"$ref": "#/definitions/defs_ok_true"},
+        "channel_id": {"$ref": "#/definitions/defs_channel_id"}
+      }
+    },
+    "defs_channel_id": {
+      "pattern": "^[C][A-Z0-9]{2,}$",
+      "type": "string"
+    },
+    "defs_ok_true": {
+      "type": "boolean",
+      "enum": [true]
+    }
+  }
+}

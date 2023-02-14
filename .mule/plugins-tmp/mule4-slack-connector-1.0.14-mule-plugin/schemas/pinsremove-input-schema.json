@@ -1,0 +1,14 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$ref": "#/definitions/formData",
+  "definitions": {"formData": {
+    "additionalProperties": true,
+    "type": "object",
+    "properties": {
+      "file": {"type": "string"},
+      "channel": {"type": "string"},
+      "file_comment": {"type": "string"},
+      "timestamp": {"type": "number"}
+    }
+  }}
+}

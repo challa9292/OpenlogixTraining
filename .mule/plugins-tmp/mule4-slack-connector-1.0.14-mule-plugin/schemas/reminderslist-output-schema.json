@@ -1,0 +1,53 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$ref": "#/definitions/default",
+  "definitions": {
+    "default": {
+      "additionalProperties": false,
+      "type": "object",
+      "required": [
+        "ok",
+        "reminders"
+      ],
+      "properties": {
+        "reminders": {
+          "type": "array",
+          "items": {"$ref": "#/definitions/objs_reminder"}
+        },
+        "ok": {"$ref": "#/definitions/defs_ok_true"}
+      }
+    },
+    "defs_user_id": {
+      "pattern": "^[UW][A-Z0-9]{2,}$",
+      "type": "string"
+    },
+    "objs_reminder": {
+      "additionalProperties": false,
+      "type": "object",
+      "required": [
+        "creator",
+        "id",
+        "recurring",
+        "text",
+        "user"
+      ],
+      "properties": {
+        "creator": {"$ref": "#/definitions/defs_user_id"},
+        "recurring": {"type": "boolean"},
+        "complete_ts": {"type": "integer"},
+        "id": {"$ref": "#/definitions/defs_reminder_id"},
+        "text": {"type": "string"},
+        "time": {"type": "integer"},
+        "user": {"$ref": "#/definitions/defs_user_id"}
+      }
+    },
+    "defs_ok_true": {
+      "type": "boolean",
+      "enum": [true]
+    },
+    "defs_reminder_id": {
+      "pattern": "^Rm[A-Z0-9]{8,}$",
+      "type": "string"
+    }
+  }
+}

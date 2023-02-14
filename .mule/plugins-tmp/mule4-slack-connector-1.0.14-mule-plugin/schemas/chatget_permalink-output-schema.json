@@ -1,0 +1,31 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$ref": "#/definitions/default",
+  "definitions": {
+    "default": {
+      "additionalProperties": false,
+      "type": "object",
+      "required": [
+        "channel",
+        "ok",
+        "permalink"
+      ],
+      "properties": {
+        "channel": {"$ref": "#/definitions/defs_channel"},
+        "ok": {"$ref": "#/definitions/defs_ok_true"},
+        "permalink": {
+          "format": "uri",
+          "type": "string"
+        }
+      }
+    },
+    "defs_channel": {
+      "pattern": "^[CGD][A-Z0-9]{8,}$",
+      "type": "string"
+    },
+    "defs_ok_true": {
+      "type": "boolean",
+      "enum": [true]
+    }
+  }
+}

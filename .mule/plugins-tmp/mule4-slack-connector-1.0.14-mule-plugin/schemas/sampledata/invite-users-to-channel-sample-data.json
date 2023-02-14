@@ -1,0 +1,43 @@
+{
+  "channel": {
+    "is_private": false,
+    "purpose": {
+      "last_set": 1449709364,
+      "creator": "W012A3BCD",
+      "value": "This part of the workspace is for fun. Make fun here."
+    },
+    "is_pending_ext_shared": false,
+    "locale": "en-US",
+    "pending_shared": [],
+    "is_channel": true,
+    "is_shared": false,
+    "is_read_only": false,
+    "id": "C012AB3CD",
+    "previous_names": [
+      "specifics",
+      "abstractions",
+      "etc"
+    ],
+    "last_read": "1502126650.228446",
+    "creator": "W012A3BCD",
+    "is_im": false,
+    "is_member": true,
+    "is_mpim": false,
+    "created": 1449252889,
+    "is_ext_shared": false,
+    "name_normalized": "general",
+    "is_group": false,
+    "unlinked": 0,
+    "is_archived": false,
+    "is_general": true,
+    "num_members": 23,
+    "name": "general",
+    "topic": {
+      "last_set": 1449709364,
+      "creator": "W012A3BCD",
+      "value": "For public discussion of generalities"
+    },
+    "is_org_shared": false
+  },
+  "ok": true
+}

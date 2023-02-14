@@ -1,0 +1,20 @@
+{
+  "pin_count": 0,
+  "messages": [
+    {
+      "text": "I find you punny and would like to smell your nose letter",
+      "type": "message",
+      "user": "U012AB3CDE",
+      "ts": "1512085950.000216"
+    },
+    {
+      "text": "What, you want to smell my shoes better?",
+      "type": "message",
+      "user": "U061F7AUR",
+      "ts": "1512104434.000490"
+    }
+  ],
+  "response_metadata": {"next_cursor": "bmV4dF90czoxNTEyMDg1ODYxMDAwNTQz"},
+  "has_more": true,
+  "ok": true
+}

@@ -1,0 +1,41 @@
+{
+  "ok": true,
+  "user": {
+    "is_ultra_restricted": false,
+    "color": "9f69e7",
+    "has_2fa": false,
+    "is_owner": false,
+    "is_restricted": false,
+    "tz": "America/Los_Angeles",
+    "profile": {
+      "image_32": "https://.../avatar/e3b51ca72dee4ef87916ae2b9240df50.jpg",
+      "status_emoji": ":books:",
+      "image_24": "https://.../avatar/e3b51ca72dee4ef87916ae2b9240df50.jpg",
+      "image_192": "https://.../avatar/e3b51ca72dee4ef87916ae2b9240df50.jpg",
+      "real_name": "Egon Spengler",
+      "image_48": "https://.../avatar/e3b51ca72dee4ef87916ae2b9240df50.jpg",
+      "team": "T012AB3C4",
+      "display_name": "spengler",
+      "image_original": "https://.../avatar/e3b51ca72dee4ef87916ae2b9240df50.jpg",
+      "real_name_normalized": "Egon Spengler",
+      "status_text": "Print is dead",
+      "avatar_hash": "ge3b51ca72de",
+      "image_72": "https://.../avatar/e3b51ca72dee4ef87916ae2b9240df50.jpg",
+      "email": "spengler@ghostbusters.example.com",
+      "image_512": "https://.../avatar/e3b51ca72dee4ef87916ae2b9240df50.jpg",
+      "display_name_normalized": "spengler"
+    },
+    "tz_label": "Pacific Daylight Time",
+    "is_primary_owner": false,
+    "real_name": "Egon Spengler",
+    "team_id": "T012AB3C4",
+    "is_admin": true,
+    "is_app_user": false,
+    "deleted": false,
+    "tz_offset": -25200,
+    "name": "spengler",
+    "id": "W012A3CDE",
+    "is_bot": false,
+    "updated": 1502138686
+  }
+}

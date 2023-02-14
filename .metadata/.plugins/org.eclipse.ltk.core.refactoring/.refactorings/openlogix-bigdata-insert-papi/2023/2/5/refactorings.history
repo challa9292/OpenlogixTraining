@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Move element &apos;process.xml&apos; to &apos;openlogix-bigdata-insert-papi/src/main/mule/implementation&apos;&#x0D;&#x0A;- Original project: &apos;openlogix-bigdata-insert-papi&apos;&#x0D;&#x0A;- Destination element: &apos;openlogix-bigdata-insert-papi/src/main/mule/implementation&apos;&#x0D;&#x0A;- Original element: &apos;process.xml&apos;&#x0D;&#x0A;- Update references to refactored element" description="Move file" destination="/src\/main\/mule&lt;implementation" element1="src/main/mule/process.xml" files="1" flags="589830" folders="0" id="org.eclipse.jdt.ui.move" policy="org.eclipse.jdt.ui.moveResources" qualified="false" references="true" stamp="1675255950737" units="0" version="1.0"/>
+</session>

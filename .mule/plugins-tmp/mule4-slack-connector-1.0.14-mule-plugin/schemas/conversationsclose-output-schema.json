@@ -1,0 +1,20 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$ref": "#/definitions/default",
+  "definitions": {
+    "default": {
+      "additionalProperties": false,
+      "type": "object",
+      "required": ["ok"],
+      "properties": {
+        "already_closed": {"type": "boolean"},
+        "ok": {"$ref": "#/definitions/defs_ok_true"},
+        "no_op": {"type": "boolean"}
+      }
+    },
+    "defs_ok_true": {
+      "type": "boolean",
+      "enum": [true]
+    }
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$ref": "#/definitions/default",
+  "definitions": {
+    "default": {
+      "additionalProperties": false,
+      "type": "object",
+      "required": [
+        "channel",
+        "ok",
+        "ts"
+      ],
+      "properties": {
+        "channel": {"$ref": "#/definitions/defs_channel"},
+        "ok": {"$ref": "#/definitions/defs_ok_true"},
+        "ts": {"$ref": "#/definitions/defs_ts"}
+      }
+    },
+    "defs_channel": {
+      "pattern": "^[CGD][A-Z0-9]{8,}$",
+      "type": "string"
+    },
+    "defs_ok_true": {
+      "type": "boolean",
+      "enum": [true]
+    },
+    "defs_ts": {
+      "pattern": "^\\d{10}\\.\\d{6}$",
+      "type": "string"
+    }
+  }
+}

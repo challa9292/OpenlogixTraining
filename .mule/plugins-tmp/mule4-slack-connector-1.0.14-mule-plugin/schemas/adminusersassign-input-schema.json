@@ -1,0 +1,19 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$ref": "#/definitions/formData",
+  "definitions": {"formData": {
+    "additionalProperties": true,
+    "type": "object",
+    "required": [
+      "user_id",
+      "team_id"
+    ],
+    "properties": {
+      "channel_ids": {"type": "string"},
+      "is_ultra_restricted": {"type": "boolean"},
+      "user_id": {"type": "string"},
+      "is_restricted": {"type": "boolean"},
+      "team_id": {"type": "string"}
+    }
+  }}
+}

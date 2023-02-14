@@ -1,0 +1,17 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$ref": "#/definitions/formData",
+  "definitions": {"formData": {
+    "additionalProperties": true,
+    "type": "object",
+    "required": [
+      "purpose",
+      "channel"
+    ],
+    "properties": {
+      "purpose": {"type": "string"},
+      "name_tagging": {"type": "boolean"},
+      "channel": {"type": "string"}
+    }
+  }}
+}

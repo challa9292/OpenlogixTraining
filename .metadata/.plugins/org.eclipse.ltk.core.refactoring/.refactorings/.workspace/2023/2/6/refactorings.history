@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="Delete resource &apos;diy-04-1-accountsapi-implementation&apos;" deleteContents="true" description="Delete resource &apos;diy-04-1-accountsapi-implementation&apos;" element1="/diy-04-1-accountsapi-implementation" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1675763762959"/>&#x0A;<refactoring comment="Delete resource &apos;DIY-06-Accessing-and-modifying-mule-events&apos;" deleteContents="true" description="Delete resource &apos;DIY-06-Accessing-and-modifying-mule-events&apos;" element1="/DIY-06-Accessing-and-modifying-mule-events" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1676022968903"/>
+</session>

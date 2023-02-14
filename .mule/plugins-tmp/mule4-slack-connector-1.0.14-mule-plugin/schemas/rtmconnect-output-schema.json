@@ -1,0 +1,61 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$ref": "#/definitions/default",
+  "definitions": {
+    "default": {
+      "additionalProperties": false,
+      "type": "object",
+      "required": [
+        "ok",
+        "self",
+        "team",
+        "url"
+      ],
+      "properties": {
+        "self": {
+          "additionalProperties": false,
+          "type": "object",
+          "required": [
+            "id",
+            "name"
+          ],
+          "properties": {
+            "name": {"type": "string"},
+            "id": {"$ref": "#/definitions/defs_user_id"}
+          }
+        },
+        "team": {
+          "additionalProperties": false,
+          "type": "object",
+          "required": [
+            "domain",
+            "id",
+            "name"
+          ],
+          "properties": {
+            "domain": {"type": "string"},
+            "name": {"type": "string"},
+            "id": {"$ref": "#/definitions/defs_team"}
+          }
+        },
+        "ok": {"$ref": "#/definitions/defs_ok_true"},
+        "url": {
+          "format": "uri",
+          "type": "string"
+        }
+      }
+    },
+    "defs_user_id": {
+      "pattern": "^[UW][A-Z0-9]{2,}$",
+      "type": "string"
+    },
+    "defs_team": {
+      "pattern": "^[T][A-Z0-9]{2,}$",
+      "type": "string"
+    },
+    "defs_ok_true": {
+      "type": "boolean",
+      "enum": [true]
+    }
+  }
+}

@@ -1,0 +1,131 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$ref": "#/definitions/default",
+  "definitions": {
+    "default": {
+      "additionalProperties": false,
+      "type": "object",
+      "required": [
+        "info",
+        "ok"
+      ],
+      "properties": {
+        "ok": {"$ref": "#/definitions/defs_ok_true"},
+        "info": {
+          "additionalProperties": true,
+          "type": "object",
+          "required": [
+            "app_home",
+            "channel",
+            "group",
+            "im",
+            "mpim",
+            "team"
+          ],
+          "properties": {
+            "im": {
+              "additionalProperties": true,
+              "type": "object",
+              "properties": {
+                "resources": {"$ref": "#/definitions/objs_resources"},
+                "scopes": {"$ref": "#/definitions/objs_scopes"}
+              }
+            },
+            "mpim": {
+              "additionalProperties": true,
+              "type": "object",
+              "properties": {
+                "resources": {"$ref": "#/definitions/objs_resources"},
+                "scopes": {"$ref": "#/definitions/objs_scopes"}
+              }
+            },
+            "channel": {
+              "additionalProperties": true,
+              "type": "object",
+              "properties": {
+                "resources": {"$ref": "#/definitions/objs_resources"},
+                "scopes": {"$ref": "#/definitions/objs_scopes"}
+              }
+            },
+            "app_home": {
+              "additionalProperties": true,
+              "type": "object",
+              "properties": {
+                "resources": {"$ref": "#/definitions/objs_resources"},
+                "scopes": {"$ref": "#/definitions/objs_scopes"}
+              }
+            },
+            "team": {
+              "additionalProperties": true,
+              "type": "object",
+              "required": [
+                "resources",
+                "scopes"
+              ],
+              "properties": {
+                "resources": {"$ref": "#/definitions/objs_resources"},
+                "scopes": {"$ref": "#/definitions/objs_scopes"}
+              }
+            },
+            "group": {
+              "additionalProperties": true,
+              "type": "object",
+              "properties": {
+                "resources": {"$ref": "#/definitions/objs_resources"},
+                "scopes": {"$ref": "#/definitions/objs_scopes"}
+              }
+            }
+          }
+        }
+      }
+    },
+    "objs_resources": {
+      "additionalProperties": false,
+      "type": "object",
+      "required": ["ids"],
+      "properties": {
+        "ids": {
+          "type": "array",
+          "items": {
+            "type": "array",
+            "items": [
+              {
+                "pattern": "^[CGD][A-Z0-9]{8,}$",
+                "type": "string"
+              },
+              {
+                "pattern": "^[T][A-Z0-9]{2,}$",
+                "type": "string"
+              }
+            ]
+          }
+        },
+        "excluded_ids": {
+          "type": "array",
+          "items": {
+            "type": "array",
+            "items": [
+              {
+                "pattern": "^[CGD][A-Z0-9]{8,}$",
+                "type": "string"
+              },
+              {
+                "pattern": "^[T][A-Z0-9]{2,}$",
+                "type": "string"
+              }
+            ]
+          }
+        },
+        "wildcard": {"type": "boolean"}
+      }
+    },
+    "objs_scopes": {
+      "type": "array",
+      "items": {"type": "string"}
+    },
+    "defs_ok_true": {
+      "type": "boolean",
+      "enum": [true]
+    }
+  }
+}

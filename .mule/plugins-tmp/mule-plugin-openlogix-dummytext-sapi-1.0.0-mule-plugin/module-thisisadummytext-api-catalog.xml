@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalogs xmlns="http://www.mulesoft.org/schema/mule/types" >
+
+            
+            <catalog name="get-healths-response-type" format="application/json">
+        <schema format="application/json+schema" location="./get-healths-response-data-schema.json" />
+    </catalog>
+        
+                    
+        
+            
+    
+    <catalog name="request-streaming-mode-enum" format="application/json">
+        <schema format="application/json+schema" location="./request-streaming-mode-enum.json" />
+    </catalog>
+
+    <catalog name="java" format="application/java">
+            <schema format="application/classloader"/>
+    </catalog>
+
+</catalogs>

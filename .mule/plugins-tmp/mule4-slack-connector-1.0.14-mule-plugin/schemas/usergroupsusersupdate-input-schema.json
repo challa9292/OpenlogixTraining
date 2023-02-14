@@ -1,0 +1,17 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$ref": "#/definitions/formData",
+  "definitions": {"formData": {
+    "additionalProperties": true,
+    "type": "object",
+    "required": [
+      "users",
+      "usergroup"
+    ],
+    "properties": {
+      "usergroup": {"type": "string"},
+      "include_count": {"type": "boolean"},
+      "users": {"type": "string"}
+    }
+  }}
+}

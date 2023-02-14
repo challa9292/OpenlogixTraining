@@ -1,0 +1,38 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$ref": "#/definitions/default",
+  "definitions": {
+    "default": {
+      "additionalProperties": true,
+      "type": "object",
+      "required": [
+        "ok",
+        "resources"
+      ],
+      "properties": {
+        "resources": {
+          "type": "array",
+          "items": {
+            "additionalProperties": true,
+            "type": "object",
+            "properties": {
+              "id": {"type": "string"},
+              "type": {"type": "string"}
+            }
+          }
+        },
+        "response_metadata": {
+          "additionalProperties": false,
+          "type": "object",
+          "required": ["next_cursor"],
+          "properties": {"next_cursor": {"type": "string"}}
+        },
+        "ok": {"$ref": "#/definitions/defs_ok_true"}
+      }
+    },
+    "defs_ok_true": {
+      "type": "boolean",
+      "enum": [true]
+    }
+  }
+}

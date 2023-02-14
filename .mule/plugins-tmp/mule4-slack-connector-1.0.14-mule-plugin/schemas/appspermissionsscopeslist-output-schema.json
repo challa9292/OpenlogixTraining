@@ -1,0 +1,38 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$ref": "#/definitions/default",
+  "definitions": {
+    "default": {
+      "additionalProperties": true,
+      "type": "object",
+      "required": [
+        "ok",
+        "scopes"
+      ],
+      "properties": {
+        "scopes": {
+          "additionalProperties": true,
+          "type": "object",
+          "properties": {
+            "im": {"$ref": "#/definitions/objs_scopes"},
+            "mpim": {"$ref": "#/definitions/objs_scopes"},
+            "channel": {"$ref": "#/definitions/objs_scopes"},
+            "app_home": {"$ref": "#/definitions/objs_scopes"},
+            "team": {"$ref": "#/definitions/objs_scopes"},
+            "user": {"$ref": "#/definitions/objs_scopes"},
+            "group": {"$ref": "#/definitions/objs_scopes"}
+          }
+        },
+        "ok": {"$ref": "#/definitions/defs_ok_true"}
+      }
+    },
+    "objs_scopes": {
+      "type": "array",
+      "items": {"type": "string"}
+    },
+    "defs_ok_true": {
+      "type": "boolean",
+      "enum": [true]
+    }
+  }
+}

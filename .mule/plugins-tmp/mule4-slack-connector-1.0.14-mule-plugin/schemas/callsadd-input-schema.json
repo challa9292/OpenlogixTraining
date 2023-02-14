@@ -1,0 +1,22 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$ref": "#/definitions/formData",
+  "definitions": {"formData": {
+    "additionalProperties": true,
+    "type": "object",
+    "required": [
+      "external_unique_id",
+      "join_url"
+    ],
+    "properties": {
+      "join_url": {"type": "string"},
+      "date_start": {"type": "integer"},
+      "desktop_app_join_url": {"type": "string"},
+      "external_display_id": {"type": "string"},
+      "external_unique_id": {"type": "string"},
+      "title": {"type": "string"},
+      "created_by": {"type": "string"},
+      "users": {"type": "string"}
+    }
+  }}
+}

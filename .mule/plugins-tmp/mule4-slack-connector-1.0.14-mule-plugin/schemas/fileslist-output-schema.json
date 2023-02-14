@@ -1,0 +1,346 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$ref": "#/definitions/default",
+  "definitions": {"default": {
+    "x-amf-examples": {"application/json196": {
+      "files": [
+        {
+          "filetype": "gif",
+          "thumb_360": "https://.../billair_360.png",
+          "pjpeg": "https://.../billair_pjpeg.jpg",
+          "thumb_160": "https://.../billair_=_160.png",
+          "title": "billair.gif",
+          "original_h": 226,
+          "ims": [],
+          "mode": "hosted",
+          "deanimate_gif": "https://.../billair_deanimate_gif.png",
+          "image_exif_rotation": 1,
+          "url_private": "https://.../billair.gif",
+          "id": "F0S43P1CZ",
+          "display_as_bot": false,
+          "timestamp": 1531763254,
+          "thumb_360_gif": "https://.../billair_360.gif",
+          "thumb_64": "https://.../billair_64.png",
+          "thumb_80": "https://.../billair_80.png",
+          "created": 1531763254,
+          "editable": false,
+          "groups": [],
+          "is_external": false,
+          "thumb_360_h": 226,
+          "pretty_type": "GIF",
+          "external_type": "",
+          "url_private_download": "https://.../billair.gif",
+          "permalink_public": "https://.../...",
+          "channels": ["C0T8SE4AU"],
+          "size": 144538,
+          "comments_count": 0,
+          "is_public": true,
+          "name": "billair.gif",
+          "thumb_360_w": 176,
+          "mimetype": "image/gif",
+          "permalink": "https://https://.../billair.gif",
+          "public_url_shared": false,
+          "user": "U061F7AUR",
+          "original_w": 176,
+          "username": ""
+        },
+        {
+          "filetype": "gif",
+          "thumb_360": "https://.../tedair_360.png",
+          "pjpeg": "https://.../tedair_pjpeg.jpg",
+          "thumb_160": "https://.../tedair_=_160.png",
+          "title": "tedair.gif",
+          "original_h": 226,
+          "ims": [],
+          "mode": "hosted",
+          "deanimate_gif": "https://.../tedair_deanimate_gif.png",
+          "image_exif_rotation": 1,
+          "url_private": "https://.../tedair.gif",
+          "id": "F0S43PZDF",
+          "display_as_bot": false,
+          "timestamp": 1531763342,
+          "thumb_360_gif": "https://.../tedair_360.gif",
+          "thumb_64": "https://.../tedair_64.png",
+          "thumb_80": "https://.../tedair_80.png",
+          "created": 1531763342,
+          "editable": false,
+          "groups": [],
+          "is_external": false,
+          "thumb_360_h": 226,
+          "pretty_type": "GIF",
+          "external_type": "",
+          "url_private_download": "https://.../tedair.gif",
+          "permalink_public": "https://.../...",
+          "channels": ["C0T8SE4AU"],
+          "size": 137531,
+          "comments_count": 0,
+          "is_public": true,
+          "name": "tedair.gif",
+          "thumb_360_w": 176,
+          "mimetype": "image/gif",
+          "permalink": "https://https://.../tedair.gif",
+          "public_url_shared": false,
+          "user": "U061F7AUR",
+          "original_w": 176,
+          "username": ""
+        }
+      ],
+      "paging": {
+        "total": 2,
+        "pages": 1,
+        "count": 100,
+        "page": 1
+      },
+      "ok": true
+    }},
+    "description": "Schema for successful response from files.list method",
+    "additionalProperties": false,
+    "title": "files.list schema",
+    "type": "object",
+    "required": [
+      "files",
+      "ok",
+      "paging"
+    ],
+    "properties": {
+      "files": {
+        "minItems": 0,
+        "uniqueItems": true,
+        "type": "array",
+        "items": {
+          "additionalProperties": false,
+          "title": "file object",
+          "type": "object",
+          "properties": {
+            "filetype": {"type": "string"},
+            "thumb_360": {
+              "format": "uri",
+              "type": "string"
+            },
+            "thumb_160": {
+              "format": "uri",
+              "type": "string"
+            },
+            "date_delete": {"type": "integer"},
+            "thumb_480": {
+              "format": "uri",
+              "type": "string"
+            },
+            "pinned_info": {
+              "additionalProperties": false,
+              "title": "Info for a pinned item",
+              "type": "object"
+            },
+            "thumb_800": {
+              "format": "uri",
+              "type": "string"
+            },
+            "thumb_720": {
+              "format": "uri",
+              "type": "string"
+            },
+            "non_owner_editable": {"type": "boolean"},
+            "thumb_960": {
+              "format": "uri",
+              "type": "string"
+            },
+            "thumb_800_w": {"type": "integer"},
+            "mode": {"type": "string"},
+            "external_url": {
+              "format": "uri",
+              "type": "string"
+            },
+            "is_tombstoned": {"type": "boolean"},
+            "num_stars": {"type": "integer"},
+            "image_exif_rotation": {"type": "integer"},
+            "id": {
+              "pattern": "^[F][A-Z0-9]{8,}$",
+              "title": "File ID",
+              "type": "string"
+            },
+            "state": {"type": "string"},
+            "thumb_64": {
+              "format": "uri",
+              "type": "string"
+            },
+            "created": {"type": "integer"},
+            "last_editor": {
+              "pattern": "^[UW][A-Z0-9]{2,}$",
+              "title": "User ID",
+              "type": "string"
+            },
+            "thumb_480_w": {"type": "integer"},
+            "thumb_960_h": {"type": "integer"},
+            "url_private_download": {
+              "format": "uri",
+              "type": "string"
+            },
+            "permalink_public": {
+              "format": "uri",
+              "type": "string"
+            },
+            "has_rich_preview": {"type": "boolean"},
+            "is_starred": {"type": "boolean"},
+            "channels": {
+              "uniqueItems": true,
+              "type": "array",
+              "items": {
+                "pattern": "^[C][A-Z0-9]{2,}$",
+                "title": "Channel ID",
+                "type": "string"
+              }
+            },
+            "size": {"type": "integer"},
+            "comments_count": {"type": "integer"},
+            "name": {"type": "string"},
+            "permalink": {
+              "format": "uri",
+              "type": "string"
+            },
+            "public_url_shared": {"type": "boolean"},
+            "updated": {"type": "integer"},
+            "original_w": {"type": "integer"},
+            "thumb_480_h": {"type": "integer"},
+            "thumb_720_w": {"type": "integer"},
+            "preview": {"type": "string"},
+            "external_id": {"type": "string"},
+            "thumb_1024_h": {"type": "integer"},
+            "title": {"type": "string"},
+            "original_h": {"type": "integer"},
+            "ims": {
+              "uniqueItems": true,
+              "type": "array",
+              "items": {
+                "pattern": "^[D][A-Z0-9]{8,}$",
+                "title": "Direct Message Channel ID",
+                "type": "string"
+              }
+            },
+            "thumb_720_h": {"type": "integer"},
+            "shares": {
+              "additionalProperties": false,
+              "type": "object",
+              "properties": {
+                "private": {
+                  "additionalProperties": false,
+                  "type": "object"
+                },
+                "public": {
+                  "additionalProperties": false,
+                  "type": "object"
+                }
+              }
+            },
+            "url_private": {
+              "format": "uri",
+              "type": "string"
+            },
+            "thumb_960_w": {"type": "integer"},
+            "display_as_bot": {"type": "boolean"},
+            "timestamp": {"type": "integer"},
+            "editor": {
+              "pattern": "^[UW][A-Z0-9]{2,}$",
+              "title": "User ID",
+              "type": "string"
+            },
+            "thumb_80": {
+              "format": "uri",
+              "type": "string"
+            },
+            "editable": {"type": "boolean"},
+            "groups": {
+              "uniqueItems": true,
+              "type": "array",
+              "items": {
+                "pattern": "^[G][A-Z0-9]{8,}$",
+                "title": "Private Channel ID",
+                "type": "string"
+              }
+            },
+            "is_external": {"type": "boolean"},
+            "thumb_360_h": {"type": "integer"},
+            "pretty_type": {"type": "string"},
+            "external_type": {"type": "string"},
+            "user_team": {
+              "pattern": "^[T][A-Z0-9]{2,}$",
+              "title": "Team ID",
+              "type": "string"
+            },
+            "pinned_to": {
+              "type": "array",
+              "items": {
+                "pattern": "^[CGD][A-Z0-9]{8,}$",
+                "title": "Channel-like conversation ID",
+                "type": "string"
+              }
+            },
+            "thumb_800_h": {"type": "integer"},
+            "source_team": {
+              "pattern": "^[T][A-Z0-9]{2,}$",
+              "title": "Team ID",
+              "type": "string"
+            },
+            "is_public": {"type": "boolean"},
+            "thumb_360_w": {"type": "integer"},
+            "thumb_tiny": {"type": "string"},
+            "mimetype": {"type": "string"},
+            "reactions": {
+              "type": "array",
+              "items": {
+                "additionalProperties": true,
+                "title": "Reaction object",
+                "type": "object",
+                "required": [
+                  "count",
+                  "name",
+                  "users"
+                ],
+                "properties": {
+                  "count": {"type": "integer"},
+                  "name": {"type": "string"},
+                  "users": {
+                    "type": "array",
+                    "items": {
+                      "pattern": "^[UW][A-Z0-9]{2,}$",
+                      "title": "User ID",
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            },
+            "thumb_1024_w": {"type": "integer"},
+            "thumb_1024": {
+              "format": "uri",
+              "type": "string"
+            },
+            "user": {"type": "string"},
+            "username": {"type": "string"}
+          }
+        }
+      },
+      "paging": {
+        "additionalProperties": false,
+        "title": "paging object",
+        "type": "object",
+        "required": [
+          "page",
+          "total"
+        ],
+        "properties": {
+          "per_page": {"type": "integer"},
+          "total": {"type": "integer"},
+          "pages": {"type": "integer"},
+          "spill": {"type": "integer"},
+          "count": {"type": "integer"},
+          "page": {"type": "integer"}
+        }
+      },
+      "ok": {
+        "title": "default success response",
+        "type": "boolean",
+        "enum": [true]
+      }
+    }
+  }}
+}

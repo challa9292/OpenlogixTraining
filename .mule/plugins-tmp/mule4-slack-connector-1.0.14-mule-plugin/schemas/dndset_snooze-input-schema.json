@@ -1,0 +1,22 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$ref": "#/definitions/formData",
+  "definitions": {
+    "formData": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": [
+        "num_minutes",
+        "token"
+      ],
+      "properties": {
+        "num_minutes": {
+          "type": "string"
+        },
+        "token": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

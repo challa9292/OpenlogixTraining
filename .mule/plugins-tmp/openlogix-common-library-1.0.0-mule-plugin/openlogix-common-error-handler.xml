@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:ee="http://www.mulesoft.org/schema/mule/ee/core" xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/ee/core/current/mule-ee.xsd">
+	<error-handler name="openlogix-common-error-handlerError_Handler" doc:id="a8e0b638-90d5-4900-a834-33360cc0ad9b" >
+		<on-error-propagate enableNotifications="true" logException="true" doc:name="On Error Propagate" doc:id="e678e17d-d1c3-4d4d-8fec-c53398606747" type="ANY">
+			<logger level="INFO" doc:name="Logger" doc:id="a4778c12-7f3b-48f2-9cdb-8d28ec18d2e5" message='#["Triggered Common Global Error Handler"]'/>
+			<ee:transform doc:name="to Error Response" doc:id="e8257cd1-686a-440a-ac12-13e8c6ac40b1" >
+				<ee:message >
+					<ee:set-payload ><![CDATA[%dw 2.0
+output application/json
+---
+{
+  "success": false,
+  "errorMessage": error.detailedDescription,
+  "timestamp": now()
+}]]></ee:set-payload>
+				</ee:message>
+			</ee:transform>
+			<logger level="INFO" doc:name="Logger" doc:id="eb36dde2-dde8-44d1-8de1-f0dea2450185" message='#["Completed Common Global Error Handler"]'/>
+		</on-error-propagate>
+	</error-handler>
+</mule>

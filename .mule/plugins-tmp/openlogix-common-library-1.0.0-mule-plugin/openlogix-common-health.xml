@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:validation="http://www.mulesoft.org/schema/mule/validation" xmlns:ee="http://www.mulesoft.org/schema/mule/ee/core"
+	xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/ee/core/current/mule-ee.xsd
+http://www.mulesoft.org/schema/mule/validation http://www.mulesoft.org/schema/mule/validation/current/mule-validation.xsd">
+	<validation:config name="Validation_Config" doc:name="Validation Config" doc:id="6b55f129-535c-4cc1-aa67-a3064cfd0274" />
+	<flow name="openlogix-common-healthFlow" doc:id="0b3ea0a6-1d89-4117-95c0-6094917d881c" >
+		<logger level="INFO" doc:name="Logger" doc:id="1467564f-b0cd-4f11-bb98-1d18d739046f" message='#["Triggered Common Health Flow"]'/>
+		<validation:is-not-null doc:name="API Name" doc:id="41ecb77d-618b-488d-825a-8320989d7759" value="#[p('api.name')]" message="Environment Variable api.name is Required" config-ref="Validation_Config"/>
+		<ee:transform doc:name="to Health Response" doc:id="56158fd1-f887-4f90-a085-450eb84df94a" >
+			<ee:message >
+				<ee:set-payload ><![CDATA[%dw 2.0
+output application/json
+---
+{
+  "apiName": p('api.name'),
+  "status": "Running",
+  "success": true,
+  "timeStamp": now()
+}]]></ee:set-payload>
+			</ee:message>
+		</ee:transform>
+		<logger level="INFO" doc:name="Logger" doc:id="91321282-542a-4c3f-832f-65c863ed4bf3" message='#["Completed Common Health Flow"]'/>
+	</flow>
+</mule>

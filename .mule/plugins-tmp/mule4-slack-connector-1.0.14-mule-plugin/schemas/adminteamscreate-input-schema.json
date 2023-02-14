@@ -1,0 +1,18 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$ref": "#/definitions/formData",
+  "definitions": {"formData": {
+    "additionalProperties": true,
+    "type": "object",
+    "required": [
+      "team_domain",
+      "team_name"
+    ],
+    "properties": {
+      "team_description": {"type": "string"},
+      "team_domain": {"type": "string"},
+      "team_name": {"type": "string"},
+      "team_discoverability": {"type": "string"}
+    }
+  }}
+}

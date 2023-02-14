@@ -1,0 +1,76 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$ref": "#/definitions/default",
+  "definitions": {
+    "default": {
+      "additionalProperties": false,
+      "type": "object",
+      "required": [
+        "logins",
+        "ok",
+        "paging"
+      ],
+      "properties": {
+        "paging": {"$ref": "#/definitions/objs_paging"},
+        "ok": {"$ref": "#/definitions/defs_ok_true"},
+        "logins": {
+          "minItems": 1,
+          "uniqueItems": true,
+          "type": "array",
+          "items": {
+            "additionalProperties": false,
+            "type": "object",
+            "required": [
+              "count",
+              "country",
+              "date_first",
+              "date_last",
+              "ip",
+              "isp",
+              "region",
+              "user_agent",
+              "user_id",
+              "username"
+            ],
+            "properties": {
+              "country": {"type": "string"},
+              "date_last": {"type": "integer"},
+              "user_id": {"$ref": "#/definitions/defs_user_id"},
+              "ip": {"type": "string"},
+              "isp": {"type": "string"},
+              "count": {"type": "integer"},
+              "date_first": {"type": "integer"},
+              "region": {"type": "string"},
+              "user_agent": {"type": "string"},
+              "username": {"type": "string"}
+            }
+          }
+        }
+      }
+    },
+    "defs_user_id": {
+      "pattern": "^[UW][A-Z0-9]{2,}$",
+      "type": "string"
+    },
+    "objs_paging": {
+      "additionalProperties": false,
+      "type": "object",
+      "required": [
+        "page",
+        "total"
+      ],
+      "properties": {
+        "per_page": {"type": "integer"},
+        "total": {"type": "integer"},
+        "pages": {"type": "integer"},
+        "spill": {"type": "integer"},
+        "count": {"type": "integer"},
+        "page": {"type": "integer"}
+      }
+    },
+    "defs_ok_true": {
+      "type": "boolean",
+      "enum": [true]
+    }
+  }
+}

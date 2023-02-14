@@ -1,0 +1,20 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$ref": "#/definitions/formData",
+  "definitions": {
+    "formData": {
+      "type": "object",
+      "additionalProperties": true,
+      "properties": {
+        "user": {
+          "description": "User ID to be removed.",
+          "type": "string"
+        },
+        "channel": {
+          "description": "ID of conversation to remove user from.",
+          "type": "string"
+        }
+      }
+    }
+  }
+}

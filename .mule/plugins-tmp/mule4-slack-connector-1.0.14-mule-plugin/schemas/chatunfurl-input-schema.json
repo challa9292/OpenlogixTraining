@@ -1,0 +1,20 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$ref": "#/definitions/formData",
+  "definitions": {"formData": {
+    "additionalProperties": true,
+    "type": "object",
+    "required": [
+      "ts",
+      "channel"
+    ],
+    "properties": {
+      "unfurls": {"type": "string"},
+      "user_auth_message": {"type": "string"},
+      "channel": {"type": "string"},
+      "user_auth_url": {"type": "string"},
+      "user_auth_required": {"type": "boolean"},
+      "ts": {"type": "string"}
+    }
+  }}
+}

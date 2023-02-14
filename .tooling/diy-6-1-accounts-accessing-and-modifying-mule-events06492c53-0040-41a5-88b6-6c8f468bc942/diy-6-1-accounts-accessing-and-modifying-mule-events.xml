@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
+	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="efb7262f-42cd-4af0-bcc2-0f7a19793ba1" >
+		<http:listener-connection host="0.0.0.0" port="8081" />
+	</http:listener-config>
+	<flow name="diy-6-1-accounts-accessing-and-modifying-mule-eventsFlow" doc:id="b707351b-8ad3-419f-adc2-e0b8efcd6872" >
+		<http:listener doc:name="GET /Accounts-based-on-name" doc:id="ebc87f93-7a2e-49fd-9e1c-826d78330ca2" />
+		<logger level="INFO" doc:name="Logger" doc:id="ea61e5fe-0059-4958-8f2e-39202f5baa5e" />
+		<set-variable value="" doc:name="Set Variable" doc:id="155cdda7-af85-4a64-9248-7a7e5c589ae4" />
+	</flow>
+</mule>

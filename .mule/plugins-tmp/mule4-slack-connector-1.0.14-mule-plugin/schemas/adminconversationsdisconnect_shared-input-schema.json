@@ -1,0 +1,13 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$ref": "#/definitions/formData",
+  "definitions": {"formData": {
+    "additionalProperties": true,
+    "type": "object",
+    "required": ["channel_id"],
+    "properties": {
+      "channel_id": {"type": "string"},
+      "leaving_team_ids": {"type": "string"}
+    }
+  }}
+}

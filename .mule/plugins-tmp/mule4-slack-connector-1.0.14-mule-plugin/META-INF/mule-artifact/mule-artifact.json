@@ -1,0 +1,30 @@
+{
+  "extensionModelLoaderDescriptor": {
+    "id": "java",
+    "attributes": {
+      "type": "com.mulesoft.connectors.slack.internal.extension.SlackConnector",
+      "version": "1.0.14"
+    }
+  },
+  "name": "Slack Connector",
+  "requiredProduct": "MULE",
+  "classLoaderModelLoaderDescriptor": {
+    "id": "mule",
+    "attributes": {
+      "privilegedExportedPackages": [],
+      "privilegedArtifactIds": [],
+      "exportedPackages": [
+        "com.mulesoft.connectivity.slack.rest.commons.api.request",
+        "com.mulesoft.connectivity.slack.rest.commons.api.configuration",
+        "com.mulesoft.connectivity.slack.rest.commons.api.proxy",
+        "com.mulesoft.connectivity.slack.rest.commons.api.operation"
+      ],
+      "exportedResources": []
+    }
+  },
+  "bundleDescriptorLoader": {
+    "id": "mule",
+    "attributes": {}
+  },
+  "minMuleVersion": "4.2.1"
+}

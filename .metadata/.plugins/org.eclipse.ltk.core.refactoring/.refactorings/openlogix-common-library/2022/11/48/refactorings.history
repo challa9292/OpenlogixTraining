@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;openlogix-common-library/src/main/mule/openlogix-common-library.xml&apos; to &apos;openlogix-common-health.xml&apos;" description="Rename resource &apos;openlogix-common-library.xml&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/main/mule/openlogix-common-library.xml" name="openlogix-common-health.xml" stamp="1669200731629" updateReferences="true"/>
+</session>

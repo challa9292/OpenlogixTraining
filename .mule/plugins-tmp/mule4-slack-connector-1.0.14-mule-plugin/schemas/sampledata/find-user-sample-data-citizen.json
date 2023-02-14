@@ -1,0 +1,20 @@
+{
+  "isUltraRestricted": false,
+  "has2fa": false,
+  "isOwner": false,
+  "isRestricted": false,
+  "realName": "Egon Spengler",
+  "team": "T012AB3C4",
+  "display_name": "spengler",
+  "statusText": "Print is dead",
+  "email": "spengler@ghostbusters.example.com",
+  "isPrimaryOwner": false,
+  "teamId": "T012AB3C4",
+  "isAdmin": true,
+  "isAppUser": false,
+  "deleted": false,
+  "name": "spengler",
+  "id": "W012A3CDE",
+  "isBot": false,
+  "updated": 1502138686
+}

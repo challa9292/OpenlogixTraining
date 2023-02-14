@@ -1,0 +1,26 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$ref": "#/definitions/default",
+  "definitions": {
+    "default": {
+      "additionalProperties": false,
+      "type": "object",
+      "required": [
+        "message_ts",
+        "ok"
+      ],
+      "properties": {
+        "ok": {"$ref": "#/definitions/defs_ok_true"},
+        "message_ts": {"$ref": "#/definitions/defs_ts"}
+      }
+    },
+    "defs_ts": {
+      "pattern": "^\\d{10}\\.\\d{6}$",
+      "type": "string"
+    },
+    "defs_ok_true": {
+      "type": "boolean",
+      "enum": [true]
+    }
+  }
+}

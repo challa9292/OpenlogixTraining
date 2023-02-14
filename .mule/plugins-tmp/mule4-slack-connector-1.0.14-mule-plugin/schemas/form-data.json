@@ -1,0 +1,36 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$ref": "#/definitions/formData",
+  "definitions": {
+    "formData": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": [
+        "user_id",
+        "team_id"
+      ],
+      "properties": {
+        "user_id": {
+          "description": "The ID of the user to add to the workspace.",
+          "type": "string"
+        },
+        "channel_ids": {
+          "description": "Comma separated values of channel IDs to add user in the new workspace.",
+          "type": "string"
+        },
+        "team_id": {
+          "description": "The ID (`T1234`) of the workspace.",
+          "type": "string"
+        },
+        "is_ultra_restricted": {
+          "description": "True if user should be added to the workspace as a single-channel guest.",
+          "type": "boolean"
+        },
+        "is_restricted": {
+          "description": "True if user should be added to the workspace as a guest.",
+          "type": "boolean"
+        }
+      }
+    }
+  }
+}

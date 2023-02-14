@@ -1,0 +1,73 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$ref": "#/definitions/default",
+  "definitions": {
+    "default": {
+      "additionalProperties": false,
+      "type": "object",
+      "required": [
+        "ok",
+        "profile"
+      ],
+      "properties": {
+        "profile": {
+          "additionalProperties": false,
+          "type": "object",
+          "required": ["fields"],
+          "properties": {"fields": {
+            "uniqueItems": true,
+            "type": "array",
+            "items": {"$ref": "#/definitions/objs_team_profile_field"}
+          }}
+        },
+        "ok": {"$ref": "#/definitions/defs_ok_true"}
+      }
+    },
+    "objs_team_profile_field": {
+      "additionalProperties": false,
+      "type": "object",
+      "required": [
+        "hint",
+        "id",
+        "label",
+        "options",
+        "ordering",
+        "type"
+      ],
+      "properties": {
+        "ordering": {"type": "number"},
+        "hint": {"type": "string"},
+        "possible_values": {
+          "type": "array",
+          "items": {"type": "string"}
+        },
+        "is_hidden": {"type": "boolean"},
+        "options": {
+          "type": "array",
+          "items": {"type": "string"}
+        },
+        "id": {
+          "pattern": "^X[a-zA-Z0-9]{9,}$",
+          "type": "string"
+        },
+        "label": {"type": "string"},
+        "type": {
+          "type": "string",
+          "enum": [
+            "text",
+            "date",
+            "link",
+            "mailto",
+            "options_list",
+            "user"
+          ]
+        },
+        "field_name": {"type": "string"}
+      }
+    },
+    "defs_ok_true": {
+      "type": "boolean",
+      "enum": [true]
+    }
+  }
+}
